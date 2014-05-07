@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1357FCC5-7B74-4E67-B453-255454F1C392</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyriadMobileChallenge</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FF049A5F-3B81-4E27-A74F-43BC8B817D87</key>
+		<string>https://github.com/JilScott/MyriadMobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyriadMobileChallenge/MyriadMobileChallenge.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FF049A5F-3B81-4E27-A74F-43BC8B817D87</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JilScott/MyriadMobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FF049A5F-3B81-4E27-A74F-43BC8B817D87</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FF049A5F-3B81-4E27-A74F-43BC8B817D87</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyriadChallenge</string>
+		</dict>
+	</array>
+</dict>
+</plist>

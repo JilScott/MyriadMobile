@@ -21,6 +21,10 @@
 		387590E81919B53D00287824 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590CA1919B53D00287824 /* UIKit.framework */; };
 		387590F01919B53D00287824 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 387590EE1919B53D00287824 /* InfoPlist.strings */; };
 		387590F21919B53D00287824 /* MyriadMobileChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 387590F11919B53D00287824 /* MyriadMobileChallengeTests.m */; };
+		387590FE1919B76C00287824 /* knights.png in Resources */ = {isa = PBXBuildFile; fileRef = 387590FD1919B76C00287824 /* knights.png */; };
+		387591011919BA9300287824 /* QuestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387591001919BA9300287824 /* QuestsTableViewController.m */; };
+		387591041919CB6B00287824 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 387591031919CB6B00287824 /* Quest.m */; };
+		387591071919D1D600287824 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387591061919D1D600287824 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		387590ED1919B53D00287824 /* MyriadMobileChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyriadMobileChallengeTests-Info.plist"; sourceTree = "<group>"; };
 		387590EF1919B53D00287824 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		387590F11919B53D00287824 /* MyriadMobileChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyriadMobileChallengeTests.m; sourceTree = "<group>"; };
+		387590FD1919B76C00287824 /* knights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knights.png; sourceTree = "<group>"; };
+		387590FF1919BA9300287824 /* QuestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestsTableViewController.h; sourceTree = "<group>"; };
+		387591001919BA9300287824 /* QuestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestsTableViewController.m; sourceTree = "<group>"; };
+		387591021919CB6B00287824 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quest.h; sourceTree = "<group>"; };
+		387591031919CB6B00287824 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quest.m; sourceTree = "<group>"; };
+		387591051919D1D600287824 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		387591061919D1D600287824 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +126,12 @@
 				387590D51919B53D00287824 /* AppDelegate.h */,
 				387590D61919B53D00287824 /* AppDelegate.m */,
 				387590D81919B53D00287824 /* Main.storyboard */,
+				387591051919D1D600287824 /* DetailViewController.h */,
+				387591061919D1D600287824 /* DetailViewController.m */,
+				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
+				387591001919BA9300287824 /* QuestsTableViewController.m */,
+				387591021919CB6B00287824 /* Quest.h */,
+				387591031919CB6B00287824 /* Quest.m */,
 				387590DB1919B53D00287824 /* ViewController.h */,
 				387590DC1919B53D00287824 /* ViewController.m */,
 				387590DE1919B53D00287824 /* Images.xcassets */,
@@ -127,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				387590CE1919B53D00287824 /* MyriadMobileChallenge-Info.plist */,
+				387590FD1919B76C00287824 /* knights.png */,
 				387590CF1919B53D00287824 /* InfoPlist.strings */,
 				387590D21919B53D00287824 /* main.m */,
 				387590D41919B53D00287824 /* MyriadMobileChallenge-Prefix.pch */,
@@ -230,6 +248,7 @@
 			files = (
 				387590DF1919B53D00287824 /* Images.xcassets in Resources */,
 				387590D11919B53D00287824 /* InfoPlist.strings in Resources */,
+				387590FE1919B76C00287824 /* knights.png in Resources */,
 				387590DA1919B53D00287824 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,8 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				387590DD1919B53D00287824 /* ViewController.m in Sources */,
+				387591041919CB6B00287824 /* Quest.m in Sources */,
 				387590D71919B53D00287824 /* AppDelegate.m in Sources */,
+				387591011919BA9300287824 /* QuestsTableViewController.m in Sources */,
 				387590D31919B53D00287824 /* main.m in Sources */,
+				387591071919D1D600287824 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

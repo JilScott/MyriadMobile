@@ -13,17 +13,53 @@
 @end
 
 @implementation ViewController
+{
+    NSString *username;
+    NSString *password;
+    UITextField *text;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+
+    username = @"Lancelot";
+    password = @"arthurDoesntKnow";
+
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{    
+    [textField resignFirstResponder];
+    return YES;
 }
+
+- (IBAction)pressedLogIn:(id)sender
+{
+    
+       if ([_txtFldUsername.text isEqualToString: username] && [_txtFldPasword.text isEqualToString:password])
+    {
+        _labelBegin.text = @"Log In To Begin Quests!";
+        [self performSegueWithIdentifier:@"loggedIn" sender:self];
+    }
+    else
+    {
+        _labelBegin.text = @"Incorrect Username or Password";
+        _labelBegin.backgroundColor = [UIColor redColor];
+    }
+}
+
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [text resignFirstResponder];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    text = textField;
+}
+
 
 @end
