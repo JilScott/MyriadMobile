@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		387590C71919B53D00287824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C61919B53D00287824 /* Foundation.framework */; };
+		387590C91919B53D00287824 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C81919B53D00287824 /* CoreGraphics.framework */; };
+		387590CB1919B53D00287824 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590CA1919B53D00287824 /* UIKit.framework */; };
+		387590D11919B53D00287824 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 387590CF1919B53D00287824 /* InfoPlist.strings */; };
+		387590D31919B53D00287824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 387590D21919B53D00287824 /* main.m */; };
+		387590D71919B53D00287824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 387590D61919B53D00287824 /* AppDelegate.m */; };
+		387590DA1919B53D00287824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387590D81919B53D00287824 /* Main.storyboard */; };
+		387590DD1919B53D00287824 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387590DC1919B53D00287824 /* ViewController.m */; };
+		387590DF1919B53D00287824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 387590DE1919B53D00287824 /* Images.xcassets */; };
+		387590E61919B53D00287824 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590E51919B53D00287824 /* XCTest.framework */; };
+		387590E71919B53D00287824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C61919B53D00287824 /* Foundation.framework */; };
+		387590E81919B53D00287824 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590CA1919B53D00287824 /* UIKit.framework */; };
+		387590F01919B53D00287824 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 387590EE1919B53D00287824 /* InfoPlist.strings */; };
+		387590F21919B53D00287824 /* MyriadMobileChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 387590F11919B53D00287824 /* MyriadMobileChallengeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		387590E91919B53D00287824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 387590BB1919B53C00287824 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 387590C21919B53D00287824;
+			remoteInfo = MyriadMobileChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		387590C31919B53D00287824 /* MyriadMobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyriadMobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		387590C61919B53D00287824 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		387590C81919B53D00287824 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		387590CA1919B53D00287824 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		387590CE1919B53D00287824 /* MyriadMobileChallenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyriadMobileChallenge-Info.plist"; sourceTree = "<group>"; };
+		387590D01919B53D00287824 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		387590D21919B53D00287824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		387590D41919B53D00287824 /* MyriadMobileChallenge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyriadMobileChallenge-Prefix.pch"; sourceTree = "<group>"; };
+		387590D51919B53D00287824 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		387590D61919B53D00287824 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		387590D91919B53D00287824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		387590DB1919B53D00287824 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		387590DC1919B53D00287824 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		387590DE1919B53D00287824 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		387590E41919B53D00287824 /* MyriadMobileChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyriadMobileChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		387590E51919B53D00287824 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		387590ED1919B53D00287824 /* MyriadMobileChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyriadMobileChallengeTests-Info.plist"; sourceTree = "<group>"; };
+		387590EF1919B53D00287824 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		387590F11919B53D00287824 /* MyriadMobileChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyriadMobileChallengeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		387590C01919B53D00287824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590C91919B53D00287824 /* CoreGraphics.framework in Frameworks */,
+				387590CB1919B53D00287824 /* UIKit.framework in Frameworks */,
+				387590C71919B53D00287824 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		387590E11919B53D00287824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590E61919B53D00287824 /* XCTest.framework in Frameworks */,
+				387590E81919B53D00287824 /* UIKit.framework in Frameworks */,
+				387590E71919B53D00287824 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		387590BA1919B53C00287824 = {
+			isa = PBXGroup;
+			children = (
+				387590CC1919B53D00287824 /* MyriadMobileChallenge */,
+				387590EB1919B53D00287824 /* MyriadMobileChallengeTests */,
+				387590C51919B53D00287824 /* Frameworks */,
+				387590C41919B53D00287824 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		387590C41919B53D00287824 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				387590C31919B53D00287824 /* MyriadMobileChallenge.app */,
+				387590E41919B53D00287824 /* MyriadMobileChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		387590C51919B53D00287824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				387590C61919B53D00287824 /* Foundation.framework */,
+				387590C81919B53D00287824 /* CoreGraphics.framework */,
+				387590CA1919B53D00287824 /* UIKit.framework */,
+				387590E51919B53D00287824 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		387590CC1919B53D00287824 /* MyriadMobileChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				387590D51919B53D00287824 /* AppDelegate.h */,
+				387590D61919B53D00287824 /* AppDelegate.m */,
+				387590D81919B53D00287824 /* Main.storyboard */,
+				387590DB1919B53D00287824 /* ViewController.h */,
+				387590DC1919B53D00287824 /* ViewController.m */,
+				387590DE1919B53D00287824 /* Images.xcassets */,
+				387590CD1919B53D00287824 /* Supporting Files */,
+			);
+			path = MyriadMobileChallenge;
+			sourceTree = "<group>";
+		};
+		387590CD1919B53D00287824 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				387590CE1919B53D00287824 /* MyriadMobileChallenge-Info.plist */,
+				387590CF1919B53D00287824 /* InfoPlist.strings */,
+				387590D21919B53D00287824 /* main.m */,
+				387590D41919B53D00287824 /* MyriadMobileChallenge-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		387590EB1919B53D00287824 /* MyriadMobileChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				387590F11919B53D00287824 /* MyriadMobileChallengeTests.m */,
+				387590EC1919B53D00287824 /* Supporting Files */,
+			);
+			path = MyriadMobileChallengeTests;
+			sourceTree = "<group>";
+		};
+		387590EC1919B53D00287824 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				387590ED1919B53D00287824 /* MyriadMobileChallengeTests-Info.plist */,
+				387590EE1919B53D00287824 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		387590C21919B53D00287824 /* MyriadMobileChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 387590F51919B53D00287824 /* Build configuration list for PBXNativeTarget "MyriadMobileChallenge" */;
+			buildPhases = (
+				387590BF1919B53D00287824 /* Sources */,
+				387590C01919B53D00287824 /* Frameworks */,
+				387590C11919B53D00287824 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyriadMobileChallenge;
+			productName = MyriadMobileChallenge;
+			productReference = 387590C31919B53D00287824 /* MyriadMobileChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		387590E31919B53D00287824 /* MyriadMobileChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 387590F81919B53D00287824 /* Build configuration list for PBXNativeTarget "MyriadMobileChallengeTests" */;
+			buildPhases = (
+				387590E01919B53D00287824 /* Sources */,
+				387590E11919B53D00287824 /* Frameworks */,
+				387590E21919B53D00287824 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				387590EA1919B53D00287824 /* PBXTargetDependency */,
+			);
+			name = MyriadMobileChallengeTests;
+			productName = MyriadMobileChallengeTests;
+			productReference = 387590E41919B53D00287824 /* MyriadMobileChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		387590BB1919B53C00287824 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jilian Scott";
+				TargetAttributes = {
+					387590E31919B53D00287824 = {
+						TestTargetID = 387590C21919B53D00287824;
+					};
+				};
+			};
+			buildConfigurationList = 387590BE1919B53C00287824 /* Build configuration list for PBXProject "MyriadMobileChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 387590BA1919B53C00287824;
+			productRefGroup = 387590C41919B53D00287824 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				387590C21919B53D00287824 /* MyriadMobileChallenge */,
+				387590E31919B53D00287824 /* MyriadMobileChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		387590C11919B53D00287824 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590DF1919B53D00287824 /* Images.xcassets in Resources */,
+				387590D11919B53D00287824 /* InfoPlist.strings in Resources */,
+				387590DA1919B53D00287824 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		387590E21919B53D00287824 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590F01919B53D00287824 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		387590BF1919B53D00287824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590DD1919B53D00287824 /* ViewController.m in Sources */,
+				387590D71919B53D00287824 /* AppDelegate.m in Sources */,
+				387590D31919B53D00287824 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		387590E01919B53D00287824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				387590F21919B53D00287824 /* MyriadMobileChallengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		387590EA1919B53D00287824 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 387590C21919B53D00287824 /* MyriadMobileChallenge */;
+			targetProxy = 387590E91919B53D00287824 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		387590CF1919B53D00287824 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387590D01919B53D00287824 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		387590D81919B53D00287824 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387590D91919B53D00287824 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		387590EE1919B53D00287824 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				387590EF1919B53D00287824 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		387590F31919B53D00287824 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		387590F41919B53D00287824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		387590F61919B53D00287824 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyriadMobileChallenge/MyriadMobileChallenge-Prefix.pch";
+				INFOPLIST_FILE = "MyriadMobileChallenge/MyriadMobileChallenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		387590F71919B53D00287824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyriadMobileChallenge/MyriadMobileChallenge-Prefix.pch";
+				INFOPLIST_FILE = "MyriadMobileChallenge/MyriadMobileChallenge-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		387590F91919B53D00287824 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MyriadMobileChallenge.app/MyriadMobileChallenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyriadMobileChallenge/MyriadMobileChallenge-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MyriadMobileChallengeTests/MyriadMobileChallengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		387590FA1919B53D00287824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MyriadMobileChallenge.app/MyriadMobileChallenge";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyriadMobileChallenge/MyriadMobileChallenge-Prefix.pch";
+				INFOPLIST_FILE = "MyriadMobileChallengeTests/MyriadMobileChallengeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		387590BE1919B53C00287824 /* Build configuration list for PBXProject "MyriadMobileChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387590F31919B53D00287824 /* Debug */,
+				387590F41919B53D00287824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		387590F51919B53D00287824 /* Build configuration list for PBXNativeTarget "MyriadMobileChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387590F61919B53D00287824 /* Debug */,
+				387590F71919B53D00287824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		387590F81919B53D00287824 /* Build configuration list for PBXNativeTarget "MyriadMobileChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387590F91919B53D00287824 /* Debug */,
+				387590FA1919B53D00287824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 387590BB1919B53C00287824 /* Project object */;
+}
