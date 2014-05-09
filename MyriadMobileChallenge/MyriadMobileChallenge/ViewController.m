@@ -23,23 +23,40 @@
 {
     [super viewDidLoad];
     
-
+    
     username = @"Lancelot";
     password = @"arthurDoesntKnow";
-
+    
+    _switcher.on = NO;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *usernameObject = [defaults objectForKey:@"logIn"];
+    _txtFldUsername.text = usernameObject;
     
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
-{    
+{
     [textField resignFirstResponder];
     return YES;
 }
 
 - (IBAction)pressedLogIn:(id)sender
 {
+    if (_switcher.on == YES)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:_txtFldUsername.text forKey:@"logIn"];
+        [defaults synchronize];
+    }
+    else
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"" forKey:@"logIn"];
+        [defaults synchronize];
+    }
     
-       if ([_txtFldUsername.text isEqualToString: username] && [_txtFldPasword.text isEqualToString:password])
+    if ([_txtFldUsername.text isEqualToString: username] && [_txtFldPasword.text isEqualToString:password])
     {
         _labelBegin.text = @"Log In To Begin Quests!";
         [self performSegueWithIdentifier:@"loggedIn" sender:self];
@@ -55,6 +72,12 @@
 {
     [text resignFirstResponder];
 }
+
+- (IBAction)pressedSwitch:(id)sender
+{
+    
+}
+
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {

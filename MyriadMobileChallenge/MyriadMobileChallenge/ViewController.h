@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelBegin;
 @property (weak, nonatomic) IBOutlet UIButton *buttonLogIn;
 - (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)pressedSwitch:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *switcher;
+
+
+
 
 
 
