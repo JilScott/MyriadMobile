@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Quest.h"
 #import "DetailViewController.h"
+#import "SettingsViewController.h"
 
-@interface QuestsTableViewController : UITableViewController
+@interface QuestsTableViewController : UITableViewController <AlignmentDelegate>
+
+@property (nonatomic) int alignmentQ;
 
 @end

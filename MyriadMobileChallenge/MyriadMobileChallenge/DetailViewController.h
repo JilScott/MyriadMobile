@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *holderPoster;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (strong, nonatomic) NSString *holderdescription;
+- (IBAction)pressedBack:(id)sender;
 
 
 

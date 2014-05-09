@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3818449D191ABBCE00801771 /* SettingsViewController.m */; };
 		387590C71919B53D00287824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C61919B53D00287824 /* Foundation.framework */; };
 		387590C91919B53D00287824 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C81919B53D00287824 /* CoreGraphics.framework */; };
 		387590CB1919B53D00287824 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590CA1919B53D00287824 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3818449C191ABBCE00801771 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3818449D191ABBCE00801771 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		387590C31919B53D00287824 /* MyriadMobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyriadMobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387590C61919B53D00287824 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		387590C81919B53D00287824 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				387590D51919B53D00287824 /* AppDelegate.h */,
 				387590D61919B53D00287824 /* AppDelegate.m */,
 				387590D81919B53D00287824 /* Main.storyboard */,
+				3818449C191ABBCE00801771 /* SettingsViewController.h */,
+				3818449D191ABBCE00801771 /* SettingsViewController.m */,
 				387591051919D1D600287824 /* DetailViewController.h */,
 				387591061919D1D600287824 /* DetailViewController.m */,
 				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
@@ -274,6 +279,7 @@
 				387591011919BA9300287824 /* QuestsTableViewController.m in Sources */,
 				387590D31919B53D00287824 /* main.m in Sources */,
 				387591071919D1D600287824 /* DetailViewController.m in Sources */,
+				3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +484,7 @@
 				387590F71919B53D00287824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		387590F81919B53D00287824 /* Build configuration list for PBXNativeTarget "MyriadMobileChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +493,7 @@
 				387590FA1919B53D00287824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
