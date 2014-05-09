@@ -26,6 +26,10 @@
 {
     [super viewDidLoad];
     
+    _alignmentQ = 1;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *alignment = [defaults objectForKey:@"alignment"];
+    _alignmentQ = alignment.intValue;
     
     goodQuests = [[NSMutableArray alloc]init];
     neutralQuests = [[NSMutableArray alloc]init];
@@ -53,7 +57,7 @@
     questObject.giver = @"Prince Jack, The Iron Horse";
     [evilQuests addObject:questObject];
     
-    _alignmentQ = 1;
+    
     if (_alignmentQ == 0)
     {
         arrayQuests = [[NSMutableArray alloc] initWithArray:goodQuests];
@@ -98,6 +102,10 @@
         arrayQuests = [[NSMutableArray alloc]initWithArray:evilQuests];
     }
     [self.tableView reloadData];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSString stringWithFormat:@"%d", _alignmentQ] forKey:@"alignment"];
+    [defaults synchronize];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -132,7 +140,7 @@
     {
         SettingsViewController *svc = [segue destinationViewController];
         svc.delegate = self;
-        _alignmentQ = svc.alignment;
+        svc.alignment = _alignmentQ;
     }
 }
 

@@ -22,7 +22,15 @@
     [_alignmentOutlet setTitle:@"Good" forSegmentAtIndex:0];
     [_alignmentOutlet setTitle:@"Neutral" forSegmentAtIndex:1];
     [_alignmentOutlet setTitle:@"Evil" forSegmentAtIndex:2];
-
+   
+   //_alignmentOutlet.selectedSegmentIndex = 1;
+    
+   
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *alignment = [defaults objectForKey:@"alignment"];
+    //_alignment = alignment.intValue;
+     _alignmentOutlet.selectedSegmentIndex = alignment.intValue;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +53,7 @@
 
 - (IBAction)alignmentSegmented:(id)sender
 {
-  
+    NSLog(@"%d msg", _alignmentOutlet.selectedSegmentIndex);
     if (_alignmentOutlet.selectedSegmentIndex == 0)
     {
         _alignment = 0;
@@ -55,13 +63,11 @@
     {
         _alignment = 1;
         NSLog(@"chose neutral");
-
     }
     else if (_alignmentOutlet.selectedSegmentIndex == 2)
     {
         _alignment = 2;
         NSLog(@"chose evil");
-
     }
     else
     {
@@ -71,7 +77,30 @@
 }
 - (IBAction)pressedBackOnSettings:(id)sender
 {
+    if (_alignmentOutlet.selectedSegmentIndex == 0)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"0" forKey:@"alignment"];
+        [defaults synchronize];
+        NSLog(@"saved good");
+
+    }
+    else if (_alignmentOutlet.selectedSegmentIndex == 1)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"1" forKey:@"alignment"];
+        [defaults synchronize];
+        NSLog(@"saved neutral");
+    }
+    else if (_alignmentOutlet.selectedSegmentIndex == 2)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"2" forKey:@"alignment"];
+        [defaults synchronize];
+        NSLog(@"saved evil");
+    }
         [_delegate delegatePass:_alignment];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end

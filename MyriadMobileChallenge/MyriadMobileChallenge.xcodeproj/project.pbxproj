@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3818449D191ABBCE00801771 /* SettingsViewController.m */; };
+		382C0820191D6B7200D3F900 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C081F191D6B7200D3F900 /* MapKit.framework */; };
+		382C0822191D6B7D00D3F900 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C0821191D6B7D00D3F900 /* CoreLocation.framework */; };
 		387590C71919B53D00287824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C61919B53D00287824 /* Foundation.framework */; };
 		387590C91919B53D00287824 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C81919B53D00287824 /* CoreGraphics.framework */; };
 		387590CB1919B53D00287824 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590CA1919B53D00287824 /* UIKit.framework */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		3818449C191ABBCE00801771 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3818449D191ABBCE00801771 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		382C081F191D6B7200D3F900 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		382C0821191D6B7D00D3F900 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		387590C31919B53D00287824 /* MyriadMobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyriadMobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387590C61919B53D00287824 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		387590C81919B53D00287824 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382C0822191D6B7D00D3F900 /* CoreLocation.framework in Frameworks */,
+				382C0820191D6B7200D3F900 /* MapKit.framework in Frameworks */,
 				387590C91919B53D00287824 /* CoreGraphics.framework in Frameworks */,
 				387590CB1919B53D00287824 /* UIKit.framework in Frameworks */,
 				387590C71919B53D00287824 /* Foundation.framework in Frameworks */,
@@ -115,6 +121,8 @@
 		387590C51919B53D00287824 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				382C0821191D6B7D00D3F900 /* CoreLocation.framework */,
+				382C081F191D6B7200D3F900 /* MapKit.framework */,
 				387590C61919B53D00287824 /* Foundation.framework */,
 				387590C81919B53D00287824 /* CoreGraphics.framework */,
 				387590CA1919B53D00287824 /* UIKit.framework */,
