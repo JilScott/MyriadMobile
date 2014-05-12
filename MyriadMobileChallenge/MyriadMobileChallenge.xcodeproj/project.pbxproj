@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3812C17B19214B12008CF480 /* QuestsAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812C17A19214B12008CF480 /* QuestsAnnotation.m */; };
 		3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3818449D191ABBCE00801771 /* SettingsViewController.m */; };
 		382C0820191D6B7200D3F900 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C081F191D6B7200D3F900 /* MapKit.framework */; };
 		382C0822191D6B7D00D3F900 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C0821191D6B7D00D3F900 /* CoreLocation.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3812C17919214B12008CF480 /* QuestsAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestsAnnotation.h; sourceTree = "<group>"; };
+		3812C17A19214B12008CF480 /* QuestsAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestsAnnotation.m; sourceTree = "<group>"; };
 		3818449C191ABBCE00801771 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3818449D191ABBCE00801771 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		382C081F191D6B7200D3F900 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -141,6 +144,8 @@
 				3818449D191ABBCE00801771 /* SettingsViewController.m */,
 				387591051919D1D600287824 /* DetailViewController.h */,
 				387591061919D1D600287824 /* DetailViewController.m */,
+				3812C17919214B12008CF480 /* QuestsAnnotation.h */,
+				3812C17A19214B12008CF480 /* QuestsAnnotation.m */,
 				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
 				387591001919BA9300287824 /* QuestsTableViewController.m */,
 				387591021919CB6B00287824 /* Quest.h */,
@@ -286,6 +291,7 @@
 				387590D71919B53D00287824 /* AppDelegate.m in Sources */,
 				387591011919BA9300287824 /* QuestsTableViewController.m in Sources */,
 				387590D31919B53D00287824 /* main.m in Sources */,
+				3812C17B19214B12008CF480 /* QuestsAnnotation.m in Sources */,
 				387591071919D1D600287824 /* DetailViewController.m in Sources */,
 				3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */,
 			);

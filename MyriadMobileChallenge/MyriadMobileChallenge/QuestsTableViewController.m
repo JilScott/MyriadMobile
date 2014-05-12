@@ -40,6 +40,10 @@
     questObject.alignment = @"Good";
     questObject.description = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground. ";
     questObject.giver = @"HotDogg The Bounty Hunter";
+    questObject.giverLatitude = 46.8541979;
+    questObject.giverLongitude = -96.8285138;
+    questObject.questLatitude = 46.908588;
+    questObject.questLongitude = -96.808991;
     [goodQuests addObject:questObject];
     
     questObject = [[Quest alloc] init];
@@ -47,6 +51,10 @@
     questObject.alignment = @"Neutral";
     questObject.description = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
     questObject.giver = @"Sir Jimmy The Swift";
+    questObject.giverLatitude = 46.8739748;
+    questObject.giverLongitude = -96.806112;
+    questObject.questLatitude = 46.8657639;
+    questObject.questLongitude = -96.7363173;
     [neutralQuests addObject:questObject];
     
     
@@ -55,6 +63,10 @@
     questObject.alignment = @"Evil";
     questObject.description = @"That strange dog that everyone is treating like a bounty-hunter must go. By the order of Prince Jack, that smelly, disease ridden mongrel must be removed from our streets by any means necessary. He is disrupting the lives of ordinary citizens, and it's just really weird. Make it gone.";
     questObject.giver = @"Prince Jack, The Iron Horse";
+    questObject.giverLatitude = 46.8739748;
+    questObject.giverLongitude = -96.806112;
+    questObject.questLatitude = 46.892386;
+    questObject.questLongitude = -96.799669;
     [evilQuests addObject:questObject];
     
     
@@ -135,6 +147,10 @@
         dvc.holderTitle = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questTitle;
         dvc.holderPoster = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giver;
         dvc.holderdescription = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).description;
+        dvc.holderGiverLatitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giverLatitude;
+         dvc.holderGiverLongitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giverLongitude;
+         dvc.holderQuestLatitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questLatitude;
+         dvc.holderQuestLongitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questLongitude;
     }
     else if ([segue.identifier isEqualToString:@"settings"])
     {

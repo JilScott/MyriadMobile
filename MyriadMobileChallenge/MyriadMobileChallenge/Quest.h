@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Jilian Scott. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h> 
+
 
 @interface Quest : NSObject
 
@@ -14,8 +15,9 @@
 @property (strong, nonatomic) NSString *alignment;
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSString *giver;
-@property (strong, nonatomic) NSString *location;
-
-
+@property (nonatomic) float giverLatitude;
+@property (nonatomic) float giverLongitude;
+@property (nonatomic) float questLatitude;
+@property (nonatomic) float questLongitude;
 
 @end
