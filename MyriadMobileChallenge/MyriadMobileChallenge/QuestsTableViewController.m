@@ -69,7 +69,7 @@
     questObject.questLongitude = -96.799669;
     [evilQuests addObject:questObject];
     
-    
+    //filtering complete array of quests based on alignment (0=good, 1=neutral, 2=evil)
     if (_alignmentQ == 0)
     {
         arrayQuests = [[NSMutableArray alloc] initWithArray:goodQuests];

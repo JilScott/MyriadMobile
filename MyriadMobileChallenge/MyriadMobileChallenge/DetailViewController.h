@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "QuestsAnnotation.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (strong, nonatomic) NSString *holderTitle;

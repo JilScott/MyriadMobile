@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3812C17B19214B12008CF480 /* QuestsAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812C17A19214B12008CF480 /* QuestsAnnotation.m */; };
+		3812C17F19216107008CF480 /* knightHead1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3812C17E19216107008CF480 /* knightHead1.jpg */; };
+		3812C1821922926C008CF480 /* JSAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812C1811922926C008CF480 /* JSAnnotationView.m */; };
+		3812C18419229399008CF480 /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 3812C18319229399008CF480 /* sword.png */; };
 		3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3818449D191ABBCE00801771 /* SettingsViewController.m */; };
+		381D3ED91922C44C001A4596 /* sword2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381D3ED81922C44C001A4596 /* sword2.jpg */; };
+		381D3EDB1922C6CA001A4596 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381D3EDA1922C6CA001A4596 /* dog1.jpg */; };
+		381D3EDD1922C94E001A4596 /* shoe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 381D3EDC1922C94E001A4596 /* shoe.gif */; };
+		381D3EDF1922C9DC001A4596 /* hotdog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 381D3EDE1922C9DC001A4596 /* hotdog.jpg */; };
 		382C0820191D6B7200D3F900 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C081F191D6B7200D3F900 /* MapKit.framework */; };
 		382C0822191D6B7D00D3F900 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C0821191D6B7D00D3F900 /* CoreLocation.framework */; };
 		387590C71919B53D00287824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387590C61919B53D00287824 /* Foundation.framework */; };
@@ -44,8 +51,16 @@
 /* Begin PBXFileReference section */
 		3812C17919214B12008CF480 /* QuestsAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestsAnnotation.h; sourceTree = "<group>"; };
 		3812C17A19214B12008CF480 /* QuestsAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestsAnnotation.m; sourceTree = "<group>"; };
+		3812C17E19216107008CF480 /* knightHead1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = knightHead1.jpg; sourceTree = "<group>"; };
+		3812C1801922926C008CF480 /* JSAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAnnotationView.h; sourceTree = "<group>"; };
+		3812C1811922926C008CF480 /* JSAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAnnotationView.m; sourceTree = "<group>"; };
+		3812C18319229399008CF480 /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
 		3818449C191ABBCE00801771 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3818449D191ABBCE00801771 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		381D3ED81922C44C001A4596 /* sword2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sword2.jpg; sourceTree = "<group>"; };
+		381D3EDA1922C6CA001A4596 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
+		381D3EDC1922C94E001A4596 /* shoe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shoe.gif; sourceTree = "<group>"; };
+		381D3EDE1922C9DC001A4596 /* hotdog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotdog.jpg; sourceTree = "<group>"; };
 		382C081F191D6B7200D3F900 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		382C0821191D6B7D00D3F900 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		387590C31919B53D00287824 /* MyriadMobileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyriadMobileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +159,8 @@
 				3818449D191ABBCE00801771 /* SettingsViewController.m */,
 				387591051919D1D600287824 /* DetailViewController.h */,
 				387591061919D1D600287824 /* DetailViewController.m */,
+				3812C1801922926C008CF480 /* JSAnnotationView.h */,
+				3812C1811922926C008CF480 /* JSAnnotationView.m */,
 				3812C17919214B12008CF480 /* QuestsAnnotation.h */,
 				3812C17A19214B12008CF480 /* QuestsAnnotation.m */,
 				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
@@ -163,8 +180,14 @@
 			children = (
 				387590CE1919B53D00287824 /* MyriadMobileChallenge-Info.plist */,
 				387590FD1919B76C00287824 /* knights.png */,
+				3812C18319229399008CF480 /* sword.png */,
+				381D3ED81922C44C001A4596 /* sword2.jpg */,
+				381D3EDC1922C94E001A4596 /* shoe.gif */,
+				381D3EDE1922C9DC001A4596 /* hotdog.jpg */,
+				381D3EDA1922C6CA001A4596 /* dog1.jpg */,
 				387590CF1919B53D00287824 /* InfoPlist.strings */,
 				387590D21919B53D00287824 /* main.m */,
+				3812C17E19216107008CF480 /* knightHead1.jpg */,
 				387590D41919B53D00287824 /* MyriadMobileChallenge-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -264,9 +287,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381D3ED91922C44C001A4596 /* sword2.jpg in Resources */,
 				387590DF1919B53D00287824 /* Images.xcassets in Resources */,
+				381D3EDB1922C6CA001A4596 /* dog1.jpg in Resources */,
+				3812C18419229399008CF480 /* sword.png in Resources */,
+				3812C17F19216107008CF480 /* knightHead1.jpg in Resources */,
 				387590D11919B53D00287824 /* InfoPlist.strings in Resources */,
 				387590FE1919B76C00287824 /* knights.png in Resources */,
+				381D3EDD1922C94E001A4596 /* shoe.gif in Resources */,
+				381D3EDF1922C9DC001A4596 /* hotdog.jpg in Resources */,
 				387590DA1919B53D00287824 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +323,7 @@
 				3812C17B19214B12008CF480 /* QuestsAnnotation.m in Sources */,
 				387591071919D1D600287824 /* DetailViewController.m in Sources */,
 				3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */,
+				3812C1821922926C008CF480 /* JSAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

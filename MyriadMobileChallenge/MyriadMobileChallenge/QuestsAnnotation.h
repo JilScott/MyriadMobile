@@ -13,7 +13,12 @@
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
+@property (copy, nonatomic) NSString *type;
+
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
+
+
 -initWithPosition: (CLLocationCoordinate2D) coords;
 
 @end
