@@ -26,7 +26,7 @@
     _labelPoster.text = _holderPoster;
     _labelTitle.text = _holderTitle;
     [self.mapView setDelegate:self];
-    /*
+    
     MKCoordinateRegion region;
     
     float centerLatitude = (_holderGiverLatitude+_holderQuestLatitude)/2;
@@ -34,7 +34,7 @@
     CLLocationCoordinate2D center;
     center.latitude = centerLatitude;
     center.longitude = centerLongitude;
-    */
+    
     
     CLLocationCoordinate2D centerQuest;
     centerQuest.latitude = _holderQuestLatitude;
@@ -60,8 +60,9 @@
     MKMapRect unionRect = MKMapRectUnion(userRect, annotationRect);
     // You have the smallest possible rect containing both locations
     MKMapRect unionRectThatFits = [_mapView mapRectThatFits:unionRect];
-    double inset = -unionRectThatFits.size.width * 0.6;
+    double inset = -unionRectThatFits.size.width * 0.2;
     [_mapView setVisibleMapRect:MKMapRectInset(unionRectThatFits, inset, inset) animated:YES];
+    [_mapView setCenterCoordinate:center animated:YES];
     //slight bug due to assumption that mapView is full size of Viewcontroller
     
     QuestsAnnotation *questAnnotation = [[QuestsAnnotation alloc] initWithPosition:centerQuest];
