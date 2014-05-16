@@ -25,6 +25,8 @@
 @property (nonatomic) float holderQuestLongitude;
 @property (nonatomic) float holderGiverLatitude;
 @property (nonatomic) float holderGiverLongitude;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 
 

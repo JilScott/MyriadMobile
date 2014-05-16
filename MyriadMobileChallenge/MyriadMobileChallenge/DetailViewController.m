@@ -21,13 +21,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+   
     _labelDescription.text = _holderdescription;
     _labelPoster.text = _holderPoster;
     _labelTitle.text = _holderTitle;
-    
     [self.mapView setDelegate:self];
-    
+    /*
     MKCoordinateRegion region;
     
     float centerLatitude = (_holderGiverLatitude+_holderQuestLatitude)/2;
@@ -35,6 +34,7 @@
     CLLocationCoordinate2D center;
     center.latitude = centerLatitude;
     center.longitude = centerLongitude;
+    */
     
     CLLocationCoordinate2D centerQuest;
     centerQuest.latitude = _holderQuestLatitude;
@@ -43,6 +43,26 @@
     CLLocationCoordinate2D centerGiver;
     centerGiver.latitude = _holderGiverLatitude;
     centerGiver.longitude = _holderGiverLongitude;
+    
+    CLLocationCoordinate2D user_location;
+    user_location.latitude = _mapView.userLocation.location.coordinate.latitude;
+    user_location.longitude = _mapView.userLocation.location.coordinate.longitude;
+    //user location currently unused
+    
+    
+    // Make map points
+    MKMapPoint questPoint = MKMapPointForCoordinate(centerQuest);
+    MKMapPoint giverPoint = MKMapPointForCoordinate(centerGiver);
+    // Make map rects with 0 size
+    MKMapRect userRect = MKMapRectMake(questPoint.x, questPoint.y, 0, 0);
+    MKMapRect annotationRect = MKMapRectMake(giverPoint.x, giverPoint.y, 0, 0);
+    // Make union of those two rects
+    MKMapRect unionRect = MKMapRectUnion(userRect, annotationRect);
+    // You have the smallest possible rect containing both locations
+    MKMapRect unionRectThatFits = [_mapView mapRectThatFits:unionRect];
+    double inset = -unionRectThatFits.size.width * 0.6;
+    [_mapView setVisibleMapRect:MKMapRectInset(unionRectThatFits, inset, inset) animated:YES];
+    //slight bug due to assumption that mapView is full size of Viewcontroller
     
     QuestsAnnotation *questAnnotation = [[QuestsAnnotation alloc] initWithPosition:centerQuest];
     questAnnotation.title = _holderTitle;
@@ -56,13 +76,16 @@
     giverAnnotation.type = @"Poster";
     [self.mapView addAnnotation:giverAnnotation];
     
+  
+    
+    /*
     MKCoordinateSpan span;
     span.latitudeDelta = .20f;
     span.longitudeDelta = .20f;
     region.center = center;
     region.span =span;
-    
-    [_mapView setRegion:region animated:YES];
+    */
+   //[_mapView setRegion:region animated:YES];
     
 }
 
