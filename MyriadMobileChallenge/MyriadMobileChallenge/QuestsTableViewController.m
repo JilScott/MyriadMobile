@@ -29,6 +29,7 @@
     _alignmentQ = 1;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *alignment = [defaults objectForKey:@"alignment"];
+    NSString *name = [defaults objectForKey:@"name"];
     _alignmentQ = alignment.intValue;
     
     goodQuests = [[NSMutableArray alloc]init];
@@ -93,10 +94,11 @@
 {
     return 1;
 }
--(void)delegatePass:(int)alignment
+-(void)delegatePassAlignment:(int)alignment andName:(NSString *)name
 {
     _alignmentQ = alignment;
-    NSLog(@"%d", _alignmentQ);
+    _name = name;
+    NSLog(@"%d %@", _alignmentQ, _name);
     //0 = good, 1 = neutral, 2 = evil
     if (_alignmentQ == 0)
     {
@@ -117,6 +119,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSString stringWithFormat:@"%d", _alignmentQ] forKey:@"alignment"];
+    [defaults setObject:_name forKey:@"name"];
     [defaults synchronize];
 }
 
@@ -157,6 +160,7 @@
         SettingsViewController *svc = [segue destinationViewController];
         svc.delegate = self;
         svc.alignment = _alignmentQ;
+        svc.name = _name;
     }
 }
 

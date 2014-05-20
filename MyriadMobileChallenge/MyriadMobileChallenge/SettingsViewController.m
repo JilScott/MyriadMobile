@@ -31,6 +31,8 @@
     NSString *alignment = [defaults objectForKey:@"alignment"];
     //_alignment = alignment.intValue;
      _alignmentOutlet.selectedSegmentIndex = alignment.intValue;
+        NSString *name = [defaults objectForKey:@"name"];
+    _txtFldName.text = name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +101,10 @@
         [defaults synchronize];
         NSLog(@"saved evil");
     }
-        [_delegate delegatePass:_alignment];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSString stringWithFormat: @"%@",_txtFldName.text] forKey:@"name"];
+    [defaults synchronize];
+        [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

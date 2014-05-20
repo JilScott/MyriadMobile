@@ -14,5 +14,6 @@
 @interface QuestsTableViewController : UITableViewController <AlignmentDelegate>
 
 @property (nonatomic) int alignmentQ;
+@property (strong, nonatomic) NSString *name;
 
 @end

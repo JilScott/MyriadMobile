@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "QuestsTableViewController.h"
+#import <Parse/Parse.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtFldPasword;

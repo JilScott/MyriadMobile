@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface ViewController ()
 
@@ -14,8 +16,8 @@
 
 @implementation ViewController
 {
-    NSString *username;
-    NSString *password;
+    NSString *username1;
+    NSString *password1;
     UITextField *text;
 }
 
@@ -24,14 +26,18 @@
     [super viewDidLoad];
     
     
-    username = @"Lancelot";
-    password = @"arthurDoesntKnow";
     
+    //hardCoded Username and Password
+    username1 = @"Lancelot";
+    password1 = @"arthurDoesntKnow";
+    
+    //default for Remember Username set to OFF
     _switcher.on = NO;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *usernameObject = [defaults objectForKey:@"logIn"];
     _txtFldUsername.text = usernameObject;
+    
     
 }
 
@@ -56,7 +62,7 @@
         [defaults synchronize];
     }
     
-    if ([_txtFldUsername.text isEqualToString: username] && [_txtFldPasword.text isEqualToString:password])
+    if ([_txtFldUsername.text isEqualToString: username1] && [_txtFldPasword.text isEqualToString:password1])
     {
         _labelBegin.text = @"Log In To Begin Quests!";
         [self performSegueWithIdentifier:@"loggedIn" sender:self];
@@ -75,7 +81,7 @@
 
 - (IBAction)pressedSwitch:(id)sender
 {
-    
+    //assessed upon LogIn
 }
 
 
@@ -83,6 +89,5 @@
 {
     text = textField;
 }
-
 
 @end

@@ -21,20 +21,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+   //DetailViewController: setting labels based on tableViewCell click (Quest)
     _labelDescription.text = _holderdescription;
     _labelPoster.text = _holderPoster;
     _labelTitle.text = _holderTitle;
     [self.mapView setDelegate:self];
     
-    MKCoordinateRegion region;
-    
+    //calculations for centering mapView based on Quest and Poster locations
     float centerLatitude = (_holderGiverLatitude+_holderQuestLatitude)/2;
     float centerLongitude = (_holderGiverLongitude + _holderQuestLongitude)/2;
     CLLocationCoordinate2D center;
     center.latitude = centerLatitude;
     center.longitude = centerLongitude;
-    
     
     CLLocationCoordinate2D centerQuest;
     centerQuest.latitude = _holderQuestLatitude;
@@ -63,7 +61,7 @@
     double inset = -unionRectThatFits.size.width * 0.2;
     [_mapView setVisibleMapRect:MKMapRectInset(unionRectThatFits, inset, inset) animated:YES];
     [_mapView setCenterCoordinate:center animated:YES];
-    //slight bug due to assumption that mapView is full size of Viewcontroller
+    //mapView centered based on actual size of mapView (rather than assuming full ViewController size)
     
     QuestsAnnotation *questAnnotation = [[QuestsAnnotation alloc] initWithPosition:centerQuest];
     questAnnotation.title = _holderTitle;
@@ -80,11 +78,13 @@
   
     
     /*
+     MKCoordinateRegion region;
     MKCoordinateSpan span;
     span.latitudeDelta = .20f;
     span.longitudeDelta = .20f;
     region.center = center;
     region.span =span;
+     Old methodology to set region
     */
    //[_mapView setRegion:region animated:YES];
     
@@ -140,16 +140,7 @@
         }
     }
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 
 @end

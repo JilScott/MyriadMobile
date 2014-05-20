@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol AlignmentDelegate
--(void)delegatePass:(int)alignment;
+-(void)delegatePassAlignment:(int)alignment andName: (NSString *)name;
 @end
 @interface SettingsViewController : UIViewController
 
@@ -19,6 +19,6 @@
 @property (nonatomic) int alignment;
 @property (strong, nonatomic) id <AlignmentDelegate> delegate;
 - (IBAction)pressedBackOnSettings:(id)sender;
-
+@property (strong, nonatomic) NSString *name;
 
 @end
