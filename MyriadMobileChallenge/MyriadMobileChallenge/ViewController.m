@@ -32,8 +32,17 @@
     _txtFldUsername.text = usernameObject;
     
     
+    
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser)
+    {
+        [self performSegueWithIdentifier:@"loggedIn" sender:self];
+    }
+}
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
