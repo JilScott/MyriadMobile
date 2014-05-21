@@ -7,6 +7,7 @@
 //
 
 #import "QuestsTableViewController.h"
+#import "QuestCustomTableViewCell.h"
 
 @interface QuestsTableViewController ()
 
@@ -15,10 +16,7 @@
 @implementation QuestsTableViewController
 {
     NSMutableArray *arrayQuests;
-    NSMutableArray *goodQuests;
-    NSMutableArray *neutralQuests;
-    NSMutableArray *evilQuests;
-    Quest *questObject;
+    NSMutableArray *arrayFilteredQuests;
 }
 
 
@@ -26,68 +24,82 @@
 {
     [super viewDidLoad];
     
-    _alignmentQ = 1;
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *alignment = [defaults objectForKey:@"alignment"];
-    NSString *name = [defaults objectForKey:@"name"];
-    _alignmentQ = alignment.intValue;
     
-    goodQuests = [[NSMutableArray alloc]init];
-    neutralQuests = [[NSMutableArray alloc]init];
-    evilQuests = [[NSMutableArray alloc]init];
+    if (alignment)
+    {
+        _alignmentQ = alignment.intValue;
+    }
     
-    questObject = [[Quest alloc] init];
-    questObject.questTitle = @"Bandits in the Woods";
-    questObject.alignment = @"Good";
-    questObject.description = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground. ";
-    questObject.giver = @"HotDogg The Bounty Hunter";
-    questObject.giverLatitude = 46.8541979;
-    questObject.giverLongitude = -96.8285138;
-    questObject.questLatitude = 46.908588;
-    questObject.questLongitude = -96.808991;
-    [goodQuests addObject:questObject];
+    arrayQuests = [Quest presetQuests];
+    arrayFilteredQuests = [[NSMutableArray alloc] init];
+
     
-    questObject = [[Quest alloc] init];
-    questObject.questTitle = @"Special Delivery";
-    questObject.alignment = @"Neutral";
-    questObject.description = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
-    questObject.giver = @"Sir Jimmy The Swift";
-    questObject.giverLatitude = 46.8739748;
-    questObject.giverLongitude = -96.806112;
-    questObject.questLatitude = 46.8657639;
-    questObject.questLongitude = -96.7363173;
-    [neutralQuests addObject:questObject];
-    
-    
-    questObject = [[Quest alloc] init];
-    questObject.questTitle = @"Filthy Mongrel";
-    questObject.alignment = @"Evil";
-    questObject.description = @"That strange dog that everyone is treating like a bounty-hunter must go. By the order of Prince Jack, that smelly, disease ridden mongrel must be removed from our streets by any means necessary. He is disrupting the lives of ordinary citizens, and it's just really weird. Make it gone.";
-    questObject.giver = @"Prince Jack, The Iron Horse";
-    questObject.giverLatitude = 46.8739748;
-    questObject.giverLongitude = -96.806112;
-    questObject.questLatitude = 46.892386;
-    questObject.questLongitude = -96.799669;
-    [evilQuests addObject:questObject];
-    
+    for (Quest *quest in arrayQuests)
+    {
+        if (_alignmentQ == 0)
+        {
+            if (quest.alignment == 0)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else  if (_alignmentQ == 1)
+        {
+            arrayFilteredQuests = arrayQuests;
+            break;
+        }
+        else  if (_alignmentQ == 2)
+        {
+            if (quest.alignment == 2)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else
+        {
+            arrayFilteredQuests = arrayQuests;
+        }
+    }
+    [self.tableView reloadData];
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
     //filtering complete array of quests based on alignment (0=good, 1=neutral, 2=evil)
-    if (_alignmentQ == 0)
+    /*
+    arrayFilteredQuests = [[NSMutableArray alloc] init];
+    
+    for (Quest *quest in arrayQuests)
     {
-        arrayQuests = [[NSMutableArray alloc] initWithArray:goodQuests];
-        
-    }
-    else if (_alignmentQ == 1)
-    {
-        arrayQuests = [[NSMutableArray alloc]initWithArray:goodQuests];
-        [arrayQuests addObjectsFromArray:evilQuests];
-        [arrayQuests addObjectsFromArray:neutralQuests];
-    }
-    else if (_alignmentQ == 2)
-    {
-        arrayQuests = [[NSMutableArray alloc]initWithArray:evilQuests];
+        if (_alignmentQ == 0)
+        {
+            if (quest.alignment == 0)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else  if (_alignmentQ == 1)
+        {
+            arrayFilteredQuests = arrayQuests;
+            break;
+        }
+        else  if (_alignmentQ == 2)
+        {
+            if (quest.alignment == 2)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else
+        {
+            arrayFilteredQuests = arrayQuests;
+        }
     }
     
-    
+    */
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -96,24 +108,38 @@
 }
 -(void)delegatePassAlignment:(int)alignment andName:(NSString *)name
 {
-    _alignmentQ = alignment;
     _name = name;
     NSLog(@"%d %@", _alignmentQ, _name);
+    
+    _alignmentQ = alignment;
     //0 = good, 1 = neutral, 2 = evil
-    if (_alignmentQ == 0)
+    arrayFilteredQuests = [[NSMutableArray alloc]init];
+
+    for (Quest *quest in arrayQuests)
     {
-        arrayQuests = [[NSMutableArray alloc] initWithArray:goodQuests];
-        
-    }
-    else if (_alignmentQ == 1)
-    {
-        arrayQuests = [[NSMutableArray alloc]initWithArray:goodQuests];
-        [arrayQuests addObjectsFromArray:evilQuests];
-        [arrayQuests addObjectsFromArray:neutralQuests];
-    }
-    else if (_alignmentQ == 2)
-    {
-        arrayQuests = [[NSMutableArray alloc]initWithArray:evilQuests];
+        if (_alignmentQ == 0)
+        {
+            if (quest.alignment == 0)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else  if (_alignmentQ == 1)
+        {
+            arrayFilteredQuests = arrayQuests;
+            break;
+        }
+        else  if (_alignmentQ == 2)
+        {
+            if (quest.alignment == 2)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else
+        {
+            arrayFilteredQuests = arrayQuests;
+        }
     }
     [self.tableView reloadData];
     
@@ -125,20 +151,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [arrayQuests count];
+    return [arrayFilteredQuests count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    QuestCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell)
     {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[QuestCustomTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayQuests objectAtIndex:indexPath.row]).questTitle];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayQuests objectAtIndex:indexPath.row]).alignment];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).questTitle];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Posted by: %@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).giver];
     return cell;
 }
 
@@ -147,13 +173,7 @@
     if ([segue.identifier isEqualToString:@"questDetails"])
     {
         DetailViewController *dvc = [segue destinationViewController];
-        dvc.holderTitle = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questTitle;
-        dvc.holderPoster = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giver;
-        dvc.holderdescription = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).description;
-        dvc.holderGiverLatitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giverLatitude;
-         dvc.holderGiverLongitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).giverLongitude;
-         dvc.holderQuestLatitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questLatitude;
-         dvc.holderQuestLongitude = ((Quest *)[arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row]).questLongitude;
+        dvc.selectedQuest = [arrayQuests objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
     else if ([segue.identifier isEqualToString:@"settings"])
     {

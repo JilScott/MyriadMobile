@@ -8,6 +8,7 @@
 
 #import "ParseViewController.h"
 #import "QuestsTableViewController.h"
+#import "SignUpViewController.h"
 
 @interface ParseViewController ()
 
@@ -67,16 +68,18 @@
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
         // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        SignUpViewController *signUpViewController = [[SignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
+        [signUpViewController setFields:PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton | PFSignUpFieldsAdditional];
+
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
         
         
         // Customize the Log In View Controller
         [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-        [logInViewController setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+        [logInViewController setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsSignUpButton | PFLogInFieldsLogInButton];
+       
         
         // Present Log In View Controller
         [self presentViewController:logInViewController animated:YES completion:NULL];

@@ -10,7 +10,7 @@
 #import "QuestsTableViewController.h"
 #import <Parse/Parse.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtFldPasword;
@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonLogIn;
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)pressedSwitch:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UISwitch *switcher;
 
 

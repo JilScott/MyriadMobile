@@ -38,7 +38,7 @@
     NSString *usernameObject = [defaults objectForKey:@"logIn"];
     _txtFldUsername.text = usernameObject;
     
-    
+  
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -79,9 +79,7 @@
     [text resignFirstResponder];
 }
 
-- (IBAction)pressedSwitch:(id)sender
-{
-    //assessed upon LogIn
+- (IBAction)pressedSwitch:(id)sender {
 }
 
 

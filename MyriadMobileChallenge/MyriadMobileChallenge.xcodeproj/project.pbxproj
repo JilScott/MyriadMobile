@@ -48,6 +48,8 @@
 		388A10FA192AAD700036DED6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A10F9192AAD6F0036DED6 /* FacebookSDK.framework */; };
 		38A965A2192AC1F300EEFB9F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A965A1192AC1F300EEFB9F /* Social.framework */; };
 		38A965AB192AEA5500EEFB9F /* ParseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A965AA192AEA5500EEFB9F /* ParseViewController.m */; };
+		38A965AE192AF96B00EEFB9F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A965AD192AF96B00EEFB9F /* SignUpViewController.m */; };
+		38EAC9B1192C62620083499F /* QuestCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,10 @@
 		38A965A1192AC1F300EEFB9F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		38A965A9192AEA5500EEFB9F /* ParseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseViewController.h; sourceTree = "<group>"; };
 		38A965AA192AEA5500EEFB9F /* ParseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseViewController.m; sourceTree = "<group>"; };
+		38A965AC192AF96B00EEFB9F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		38A965AD192AF96B00EEFB9F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		38EAC9AF192C62620083499F /* QuestCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestCustomTableViewCell.h; sourceTree = "<group>"; };
+		38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestCustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,22 +205,18 @@
 		387590CC1919B53D00287824 /* MyriadMobileChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				388A10F61926CDC10036DED6 /* Annotations */,
 				387590D51919B53D00287824 /* AppDelegate.h */,
 				387590D61919B53D00287824 /* AppDelegate.m */,
 				387590D81919B53D00287824 /* Main.storyboard */,
-				38A965A9192AEA5500EEFB9F /* ParseViewController.h */,
-				38A965AA192AEA5500EEFB9F /* ParseViewController.m */,
+				38EAC9B3192C67440083499F /* LogIn/SignUp */,
+				38EAC9B2192C65DA0083499F /* TableView */,
+				388A10F61926CDC10036DED6 /* Annotations */,
 				3818449C191ABBCE00801771 /* SettingsViewController.h */,
 				3818449D191ABBCE00801771 /* SettingsViewController.m */,
 				387591051919D1D600287824 /* DetailViewController.h */,
 				387591061919D1D600287824 /* DetailViewController.m */,
-				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
-				387591001919BA9300287824 /* QuestsTableViewController.m */,
 				387591021919CB6B00287824 /* Quest.h */,
 				387591031919CB6B00287824 /* Quest.m */,
-				387590DB1919B53D00287824 /* ViewController.h */,
-				387590DC1919B53D00287824 /* ViewController.m */,
 				387590DE1919B53D00287824 /* Images.xcassets */,
 				387590CD1919B53D00287824 /* Supporting Files */,
 			);
@@ -266,6 +268,30 @@
 				3812C17A19214B12008CF480 /* QuestsAnnotation.m */,
 			);
 			name = Annotations;
+			sourceTree = "<group>";
+		};
+		38EAC9B2192C65DA0083499F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
+				387591001919BA9300287824 /* QuestsTableViewController.m */,
+				38EAC9AF192C62620083499F /* QuestCustomTableViewCell.h */,
+				38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		38EAC9B3192C67440083499F /* LogIn/SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				387590DB1919B53D00287824 /* ViewController.h */,
+				387590DC1919B53D00287824 /* ViewController.m */,
+				38A965AC192AF96B00EEFB9F /* SignUpViewController.h */,
+				38A965AD192AF96B00EEFB9F /* SignUpViewController.m */,
+				38A965A9192AEA5500EEFB9F /* ParseViewController.h */,
+				38A965AA192AEA5500EEFB9F /* ParseViewController.m */,
+			);
+			name = LogIn/SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +407,8 @@
 				38A965AB192AEA5500EEFB9F /* ParseViewController.m in Sources */,
 				387591071919D1D600287824 /* DetailViewController.m in Sources */,
 				3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */,
+				38EAC9B1192C62620083499F /* QuestCustomTableViewCell.m in Sources */,
+				38A965AE192AF96B00EEFB9F /* SignUpViewController.m in Sources */,
 				3812C1821922926C008CF480 /* JSAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

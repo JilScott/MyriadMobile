@@ -15,19 +15,10 @@
 @interface DetailViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (strong, nonatomic) NSString *holderTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelPoster;
-@property (strong, nonatomic) NSString *holderPoster;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
-@property (strong, nonatomic) NSString *holderdescription;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic) float holderQuestLatitude;
-@property (nonatomic) float holderQuestLongitude;
-@property (nonatomic) float holderGiverLatitude;
-@property (nonatomic) float holderGiverLongitude;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-
+@property (strong, nonatomic) Quest *selectedQuest;
 
 
 

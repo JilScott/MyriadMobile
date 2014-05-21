@@ -19,9 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_alignmentOutlet setTitle:@"Good" forSegmentAtIndex:0];
-    [_alignmentOutlet setTitle:@"Neutral" forSegmentAtIndex:1];
-    [_alignmentOutlet setTitle:@"Evil" forSegmentAtIndex:2];
    
    //_alignmentOutlet.selectedSegmentIndex = 1;
     

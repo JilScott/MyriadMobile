@@ -10,6 +10,46 @@
 
 @implementation Quest
 
++(NSMutableArray*)presetQuests
+{
+    NSMutableArray *arrayQuests = [[NSMutableArray alloc]init];
+    
+    Quest *questObject = [[Quest alloc] init];
+    questObject.questTitle = @"Bandits in the Woods";
+    questObject.alignment = 0; //Good
+    questObject.description = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground. ";
+    questObject.giver = @"HotDogg The Bounty Hunter";
+    questObject.giverLatitude = 46.8541979;
+    questObject.giverLongitude = -96.8285138;
+    questObject.questLatitude = 46.908588;
+    questObject.questLongitude = -96.808991;
+    [arrayQuests addObject:questObject];
+    
+    questObject = [[Quest alloc] init];
+    questObject.questTitle = @"Special Delivery";
+    questObject.alignment = 1; //Neutral
+    questObject.description = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
+    questObject.giver = @"Sir Jimmy The Swift";
+    questObject.giverLatitude = 46.8739748;
+    questObject.giverLongitude = -96.806112;
+    questObject.questLatitude = 46.8657639;
+    questObject.questLongitude = -96.7363173;
+    [arrayQuests addObject:questObject];
+    
+    
+    questObject = [[Quest alloc] init];
+    questObject.questTitle = @"Filthy Mongrel";
+    questObject.alignment = 2; //Evil
+    questObject.description = @"That strange dog that everyone is treating like a bounty-hunter must go. By the order of Prince Jack, that smelly, disease ridden mongrel must be removed from our streets by any means necessary. He is disrupting the lives of ordinary citizens, and it's just really weird. Make it gone.";
+    questObject.giver = @"Prince Jack, The Iron Horse";
+    questObject.giverLatitude = 46.8739748;
+    questObject.giverLongitude = -96.806112;
+    questObject.questLatitude = 46.892386;
+    questObject.questLongitude = -96.799669;
+    [arrayQuests addObject:questObject];
+    
+    return arrayQuests;
+}
 
 
 
