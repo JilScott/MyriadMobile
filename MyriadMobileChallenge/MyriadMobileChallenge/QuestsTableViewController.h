@@ -15,5 +15,6 @@
 
 @property (nonatomic) int alignmentQ;
 @property (strong, nonatomic) NSString *name;
+- (IBAction)pressedLogOut:(id)sender;
 
 @end

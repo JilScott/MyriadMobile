@@ -113,7 +113,7 @@
     
     user = [PFUser currentUser];
     user[@"name"] =_txtFldName.text;
-    user[@"alignment"] = [NSNumber numberWithInt:_alignmentOutlet.selectedSegmentIndex];
+    user[@"alignment"] = [NSNumber numberWithInteger:_alignmentOutlet.selectedSegmentIndex];
     [user saveInBackground];
     [self dismissViewControllerAnimated:YES completion:nil];
     

@@ -68,7 +68,7 @@
         user.username = _txtFldUsername.text; //default settings to save
         user.password = _txtFldPassword.text;
         user[@"name"] = _txtFldHeroName.text;
-        user[@"alignment"] = [NSNumber numberWithInt:_alignmentSegment.selectedSegmentIndex];
+        user[@"alignment"] = [NSNumber numberWithInteger:_alignmentSegment.selectedSegmentIndex];
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)

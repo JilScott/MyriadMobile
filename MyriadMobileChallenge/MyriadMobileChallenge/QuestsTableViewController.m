@@ -18,6 +18,7 @@
 {
     NSMutableArray *arrayQuests;
     NSMutableArray *arrayFilteredQuests;
+    PFUser *currentUser;
 }
 
 
@@ -32,7 +33,7 @@
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
     
-    PFUser *currentUser = [PFUser currentUser];
+    currentUser = [PFUser currentUser];
     _alignmentQ = [[currentUser objectForKey:@"alignment"]intValue];
     _name = [currentUser objectForKey:@"name"];
 
@@ -197,4 +198,10 @@
     }
 }
 
+- (IBAction)pressedLogOut:(id)sender
+{
+    [PFUser logOut];
+    currentUser = [PFUser currentUser];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
