@@ -163,8 +163,8 @@
         cell = [[QuestCustomTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).questTitle];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Posted by: %@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).giver];
+    cell.labelQuestTitle.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).questTitle];
+    cell.labelQuestPoster.text = [NSString stringWithFormat:@"Posted by: %@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).giver];
     return cell;
 }
 
