@@ -8,6 +8,7 @@
 
 #import "QuestsTableViewController.h"
 #import "QuestCustomTableViewCell.h"
+#import <Parse/Parse.h>
 
 @interface QuestsTableViewController ()
 
@@ -31,7 +32,10 @@
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
     
-    
+    PFUser *currentUser = [PFUser currentUser];
+    _alignmentQ = [[currentUser objectForKey:@"alignment"]intValue];
+    _name = [currentUser objectForKey:@"name"];
+
     for (Quest *quest in arrayQuests)
     {
         if (_alignmentQ == 1)

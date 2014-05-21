@@ -111,6 +111,7 @@
     [defaults synchronize];
     [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
     
+    user = [PFUser currentUser];
     user[@"name"] =_txtFldName.text;
     user[@"alignment"] = [NSNumber numberWithInt:_alignmentOutlet.selectedSegmentIndex];
     [user saveInBackground];
