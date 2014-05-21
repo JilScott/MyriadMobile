@@ -28,25 +28,13 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *alignment = [defaults objectForKey:@"alignment"];
     
-    if (alignment)
-    {
-        _alignmentQ = alignment.intValue;
-    }
-    
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
-
+    
     
     for (Quest *quest in arrayQuests)
     {
-        if (_alignmentQ == 0)
-        {
-            if (quest.alignment == 0)
-            {
-                [arrayFilteredQuests addObject:quest];
-            }
-        }
-        else  if (_alignmentQ == 1)
+        if (_alignmentQ == 1)
         {
             arrayFilteredQuests = arrayQuests;
             break;
@@ -58,13 +46,25 @@
                 [arrayFilteredQuests addObject:quest];
             }
         }
+        else if(_alignmentQ == 0)
+        {
+            if (quest.alignment == 0)
+            {
+                [arrayFilteredQuests addObject:quest];
+            }
+        }
+        else if (alignment)
+        {
+            _alignmentQ = alignment.intValue;
+        }
         else
         {
+            _alignmentQ = 1;
             arrayFilteredQuests = arrayQuests;
         }
     }
     [self.tableView reloadData];
-
+    
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -76,39 +76,39 @@
     {
         self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Welcome"];
     }
-
+    
     //filtering complete array of quests based on alignment (0=good, 1=neutral, 2=evil)
     /*
-    arrayFilteredQuests = [[NSMutableArray alloc] init];
-    
-    for (Quest *quest in arrayQuests)
-    {
-        if (_alignmentQ == 0)
-        {
-            if (quest.alignment == 0)
-            {
-                [arrayFilteredQuests addObject:quest];
-            }
-        }
-        else  if (_alignmentQ == 1)
-        {
-            arrayFilteredQuests = arrayQuests;
-            break;
-        }
-        else  if (_alignmentQ == 2)
-        {
-            if (quest.alignment == 2)
-            {
-                [arrayFilteredQuests addObject:quest];
-            }
-        }
-        else
-        {
-            arrayFilteredQuests = arrayQuests;
-        }
-    }
-    
-    */
+     arrayFilteredQuests = [[NSMutableArray alloc] init];
+     
+     for (Quest *quest in arrayQuests)
+     {
+     if (_alignmentQ == 0)
+     {
+     if (quest.alignment == 0)
+     {
+     [arrayFilteredQuests addObject:quest];
+     }
+     }
+     else  if (_alignmentQ == 1)
+     {
+     arrayFilteredQuests = arrayQuests;
+     break;
+     }
+     else  if (_alignmentQ == 2)
+     {
+     if (quest.alignment == 2)
+     {
+     [arrayFilteredQuests addObject:quest];
+     }
+     }
+     else
+     {
+     arrayFilteredQuests = arrayQuests;
+     }
+     }
+     
+     */
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -123,7 +123,7 @@
     _alignmentQ = alignment;
     //0 = good, 1 = neutral, 2 = evil
     arrayFilteredQuests = [[NSMutableArray alloc]init];
-
+    
     for (Quest *quest in arrayQuests)
     {
         if (_alignmentQ == 0)

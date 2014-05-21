@@ -47,9 +47,8 @@
 		388A10F51926CD310036DED6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A10F41926CD310036DED6 /* SystemConfiguration.framework */; };
 		388A10FA192AAD700036DED6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A10F9192AAD6F0036DED6 /* FacebookSDK.framework */; };
 		38A965A2192AC1F300EEFB9F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A965A1192AC1F300EEFB9F /* Social.framework */; };
-		38A965AB192AEA5500EEFB9F /* ParseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A965AA192AEA5500EEFB9F /* ParseViewController.m */; };
-		38A965AE192AF96B00EEFB9F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A965AD192AF96B00EEFB9F /* SignUpViewController.m */; };
 		38EAC9B1192C62620083499F /* QuestCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */; };
+		38EAC9BB192D35180083499F /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EAC9BA192D35180083499F /* RegistrationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,12 +113,10 @@
 		388A10F41926CD310036DED6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		388A10F9192AAD6F0036DED6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		38A965A1192AC1F300EEFB9F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		38A965A9192AEA5500EEFB9F /* ParseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseViewController.h; sourceTree = "<group>"; };
-		38A965AA192AEA5500EEFB9F /* ParseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseViewController.m; sourceTree = "<group>"; };
-		38A965AC192AF96B00EEFB9F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		38A965AD192AF96B00EEFB9F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		38EAC9AF192C62620083499F /* QuestCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestCustomTableViewCell.h; sourceTree = "<group>"; };
 		38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestCustomTableViewCell.m; sourceTree = "<group>"; };
+		38EAC9B9192D35180083499F /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		38EAC9BA192D35180083499F /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,8 +272,7 @@
 			children = (
 				387590FF1919BA9300287824 /* QuestsTableViewController.h */,
 				387591001919BA9300287824 /* QuestsTableViewController.m */,
-				38EAC9AF192C62620083499F /* QuestCustomTableViewCell.h */,
-				38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */,
+				38EAC9BC192D41520083499F /* TableViewCell */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -284,14 +280,21 @@
 		38EAC9B3192C67440083499F /* LogIn/SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				38EAC9B9192D35180083499F /* RegistrationViewController.h */,
+				38EAC9BA192D35180083499F /* RegistrationViewController.m */,
 				387590DB1919B53D00287824 /* ViewController.h */,
 				387590DC1919B53D00287824 /* ViewController.m */,
-				38A965AC192AF96B00EEFB9F /* SignUpViewController.h */,
-				38A965AD192AF96B00EEFB9F /* SignUpViewController.m */,
-				38A965A9192AEA5500EEFB9F /* ParseViewController.h */,
-				38A965AA192AEA5500EEFB9F /* ParseViewController.m */,
 			);
 			name = LogIn/SignUp;
+			sourceTree = "<group>";
+		};
+		38EAC9BC192D41520083499F /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				38EAC9AF192C62620083499F /* QuestCustomTableViewCell.h */,
+				38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,16 +402,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				387590DD1919B53D00287824 /* ViewController.m in Sources */,
+				38EAC9BB192D35180083499F /* RegistrationViewController.m in Sources */,
 				387591041919CB6B00287824 /* Quest.m in Sources */,
 				387590D71919B53D00287824 /* AppDelegate.m in Sources */,
 				387591011919BA9300287824 /* QuestsTableViewController.m in Sources */,
 				387590D31919B53D00287824 /* main.m in Sources */,
 				3812C17B19214B12008CF480 /* QuestsAnnotation.m in Sources */,
-				38A965AB192AEA5500EEFB9F /* ParseViewController.m in Sources */,
 				387591071919D1D600287824 /* DetailViewController.m in Sources */,
 				3818449E191ABBCE00801771 /* SettingsViewController.m in Sources */,
 				38EAC9B1192C62620083499F /* QuestCustomTableViewCell.m in Sources */,
-				38A965AE192AF96B00EEFB9F /* SignUpViewController.m in Sources */,
 				3812C1821922926C008CF480 /* JSAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,7 @@
 - (IBAction)pressedSwitch:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISwitch *switcher;
+- (IBAction)pressedRegister:(id)sender;
 
 
 

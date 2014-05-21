@@ -7,28 +7,31 @@
 //
 
 #import "SettingsViewController.h"
+#import <Parse/Parse.h>
 
 @interface SettingsViewController ()
 
 @end
 
 @implementation SettingsViewController
-
+{
+    PFUser *user;
+}
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-   //_alignmentOutlet.selectedSegmentIndex = 1;
     
-   
+    //_alignmentOutlet.selectedSegmentIndex = 1;
+    
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *alignment = [defaults objectForKey:@"alignment"];
     //_alignment = alignment.intValue;
-     _alignmentOutlet.selectedSegmentIndex = alignment.intValue;
-        NSString *name = [defaults objectForKey:@"name"];
+    _alignmentOutlet.selectedSegmentIndex = alignment.intValue;
+    NSString *name = [defaults objectForKey:@"name"];
     _txtFldName.text = name;
 }
 
@@ -40,15 +43,15 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)alignmentSegmented:(id)sender
 {
@@ -72,7 +75,7 @@
     {
         _alignment = 3;
     }
-
+    
 }
 - (IBAction)pressedBackOnSettings:(id)sender
 {
@@ -108,8 +111,11 @@
     [defaults synchronize];
     [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
     
+    user[@"name"] =_txtFldName.text;
+    user[@"alignment"] = [NSNumber numberWithInt:_alignmentOutlet.selectedSegmentIndex];
+    [user saveInBackground];
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    
 }
 
 - (IBAction)pressedUpdateLocation:(id)sender

@@ -16,8 +16,6 @@
 
 @implementation ViewController
 {
-    NSString *username1;
-    NSString *password1;
     UITextField *text;
 }
 
@@ -26,19 +24,14 @@
     [super viewDidLoad];
     
     
-    
-    //hardCoded Username and Password
-    username1 = @"Lancelot";
-    password1 = @"arthurDoesntKnow";
-    
     //default for Remember Username set to OFF
-    _switcher.on = NO;
+    // _switcher.on = NO;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *usernameObject = [defaults objectForKey:@"logIn"];
     _txtFldUsername.text = usernameObject;
     
-  
+    
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -62,15 +55,28 @@
         [defaults synchronize];
     }
     
-    if ([_txtFldUsername.text isEqualToString: username1] && [_txtFldPasword.text isEqualToString:password1])
+    if ([_txtFldUsername.text isEqualToString:@""] | [_txtFldPasword.text isEqualToString:@""])
     {
-        _labelBegin.text = @"Log In To Begin Quests!";
-        [self performSegueWithIdentifier:@"loggedIn" sender:self];
+        _labelBegin.text = @"Incorrect Username Or Password";
+        _labelBegin.backgroundColor = [UIColor redColor];
+        
     }
     else
     {
-        _labelBegin.text = @"Incorrect Username or Password";
-        _labelBegin.backgroundColor = [UIColor redColor];
+        [PFUser logInWithUsernameInBackground:_txtFldUsername.text password:_txtFldPasword.text
+                                        block:^(PFUser *user, NSError *error)
+         {
+             if (user)
+             {
+                 [self performSegueWithIdentifier:@"loggedIn" sender:self];
+             }
+             else
+             {
+                 NSLog(@"%@ %@", user, error);
+                 _labelBegin.backgroundColor = [UIColor redColor];
+                 _labelBegin.text = [NSString stringWithFormat:@"%@ %@", user, error];
+             }
+         }];
     }
 }
 
@@ -88,4 +94,20 @@
     text = textField;
 }
 
+- (IBAction)pressedRegister:(id)sender
+{
+    //[self performSegueWithIdentifier:@"register" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"loggedIn"])
+    {
+        UINavigationController *navigationController = [segue destinationViewController];
+        QuestsTableViewController *qvc = (QuestsTableViewController*)navigationController.topViewController;
+        qvc.alignmentQ = 1;
+        qvc.name = _txtFldUsername.text;
+    }
+    
+}
 @end
