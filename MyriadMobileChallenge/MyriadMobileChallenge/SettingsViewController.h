@@ -20,5 +20,7 @@
 @property (strong, nonatomic) id <AlignmentDelegate> delegate;
 - (IBAction)pressedBackOnSettings:(id)sender;
 @property (strong, nonatomic) NSString *name;
+- (IBAction)pressedSave:(id)sender;
+- (IBAction)pressedUpdateLocation:(id)sender;
 
 @end

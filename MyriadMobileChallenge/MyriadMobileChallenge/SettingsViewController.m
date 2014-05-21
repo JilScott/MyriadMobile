@@ -76,13 +76,18 @@
 }
 - (IBAction)pressedBackOnSettings:(id)sender
 {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)pressedSave:(id)sender
+{
     if (_alignmentOutlet.selectedSegmentIndex == 0)
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:@"0" forKey:@"alignment"];
         [defaults synchronize];
         NSLog(@"saved good");
-
+        
     }
     else if (_alignmentOutlet.selectedSegmentIndex == 1)
     {
@@ -101,8 +106,14 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSString stringWithFormat: @"%@",_txtFldName.text] forKey:@"name"];
     [defaults synchronize];
-        [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
+    [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
+- (IBAction)pressedUpdateLocation:(id)sender
+{
+    //configure to update GeoLocation via Parse
+}
 @end
