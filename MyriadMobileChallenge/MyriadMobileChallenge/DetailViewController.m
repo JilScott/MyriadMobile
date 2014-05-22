@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "JSAnnotationView.h"
+#import <Parse/Parse.h>
 
 
 @interface DetailViewController ()
@@ -143,4 +144,10 @@
 
 
 
+- (IBAction)pressedAcceptQuest:(id)sender
+{
+    [_acceptQuestLabel setTitle:@"Accepted Quest" forState:UIControlStateNormal];
+    [_acceptQuestLabel setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+   
+}
 @end

@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) Quest *selectedQuest;
 
+- (IBAction)pressedAcceptQuest:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *acceptQuestLabel;
 
 
 

@@ -32,11 +32,11 @@
     
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
-    
+    [self downloadQuests];
     currentUser = [PFUser currentUser];
     _alignmentQ = [[currentUser objectForKey:@"alignment"]intValue];
     _name = [currentUser objectForKey:@"name"];
-
+    
     for (Quest *quest in arrayQuests)
     {
         if (_alignmentQ == 1)
@@ -203,5 +203,51 @@
     [PFUser logOut];
     currentUser = [PFUser currentUser];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)downloadQuests
+{
+    NSMutableArray *downloadedQuests = [[NSMutableArray alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"Quests"];
+    
+    [query includeKey:@"questGiver"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *onlineQuests, NSError *error)
+     {
+         if (!error)
+         {
+             // The find succeeded.
+             NSLog(@"Successfully retrieved %lu quests.", (unsigned long)onlineQuests.count);
+             // Do something with the found objects
+             for (PFObject *quest in onlineQuests)
+             {
+                 Quest *downloadedQuest = [[Quest alloc] init];
+                 downloadedQuest.questTitle = quest[@"name"];
+                 downloadedQuest.alignment = [quest[@"alignment"]intValue];
+                 downloadedQuest.description = quest[@"description"];
+                 
+                 PFGeoPoint *questGeoPoint = quest[@"location"];
+                 downloadedQuest.questLatitude = questGeoPoint.latitude;
+                 downloadedQuest.questLongitude = questGeoPoint.longitude;
+                 
+                 PFUser *giver = quest[@"questGiver"];
+                 downloadedQuest.giver= giver[@"name"];
+                 
+                 PFGeoPoint *giverGeoPoint = giver[@"location"];
+                 downloadedQuest.giverLatitude = giverGeoPoint.latitude;
+                 downloadedQuest.giverLongitude = giverGeoPoint.longitude;
+                 
+                 
+                 [downloadedQuests addObject:downloadedQuest];
+                 
+                 NSLog(@"%@", quest.objectId);
+             }
+         }
+         else
+         {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         }
+         [arrayQuests addObjectsFromArray:downloadedQuests];
+     }];
 }
 @end
