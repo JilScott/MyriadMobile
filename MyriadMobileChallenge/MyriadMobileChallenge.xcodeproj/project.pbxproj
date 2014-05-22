@@ -49,6 +49,10 @@
 		38A965A2192AC1F300EEFB9F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A965A1192AC1F300EEFB9F /* Social.framework */; };
 		38EAC9B1192C62620083499F /* QuestCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */; };
 		38EAC9BB192D35180083499F /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EAC9BA192D35180083499F /* RegistrationViewController.m */; };
+		38EAC9BE192E84B30083499F /* unicornKill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38EAC9BD192E84B30083499F /* unicornKill.jpg */; };
+		38EAC9C0192E84B90083499F /* evilDragon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38EAC9BF192E84B90083499F /* evilDragon.jpg */; };
+		38EAC9C2192E84C10083499F /* neutral.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38EAC9C1192E84C10083499F /* neutral.jpg */; };
+		38EAC9C4192E87890083499F /* evil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 38EAC9C3192E87890083499F /* evil.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		38EAC9B0192C62620083499F /* QuestCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestCustomTableViewCell.m; sourceTree = "<group>"; };
 		38EAC9B9192D35180083499F /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		38EAC9BA192D35180083499F /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		38EAC9BD192E84B30083499F /* unicornKill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unicornKill.jpg; sourceTree = "<group>"; };
+		38EAC9BF192E84B90083499F /* evilDragon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evilDragon.jpg; sourceTree = "<group>"; };
+		38EAC9C1192E84C10083499F /* neutral.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = neutral.jpg; sourceTree = "<group>"; };
+		38EAC9C3192E87890083499F /* evil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evil.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,10 @@
 		387590CD1919B53D00287824 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				38EAC9C3192E87890083499F /* evil.jpg */,
+				38EAC9C1192E84C10083499F /* neutral.jpg */,
+				38EAC9BF192E84B90083499F /* evilDragon.jpg */,
+				38EAC9BD192E84B30083499F /* unicornKill.jpg */,
 				387590CE1919B53D00287824 /* MyriadMobileChallenge-Info.plist */,
 				387590FD1919B76C00287824 /* knights.png */,
 				3812C18319229399008CF480 /* sword.png */,
@@ -377,10 +389,14 @@
 				387590DF1919B53D00287824 /* Images.xcassets in Resources */,
 				381D3EDB1922C6CA001A4596 /* dog1.jpg in Resources */,
 				3812C18419229399008CF480 /* sword.png in Resources */,
+				38EAC9C0192E84B90083499F /* evilDragon.jpg in Resources */,
 				3812C17F19216107008CF480 /* knightHead1.jpg in Resources */,
+				38EAC9C2192E84C10083499F /* neutral.jpg in Resources */,
+				38EAC9BE192E84B30083499F /* unicornKill.jpg in Resources */,
 				387590D11919B53D00287824 /* InfoPlist.strings in Resources */,
 				387590FE1919B76C00287824 /* knights.png in Resources */,
 				381D3EDD1922C94E001A4596 /* shoe.gif in Resources */,
+				38EAC9C4192E87890083499F /* evil.jpg in Resources */,
 				381D3EDF1922C9DC001A4596 /* hotdog.jpg in Resources */,
 				387590DA1919B53D00287824 /* Main.storyboard in Resources */,
 			);

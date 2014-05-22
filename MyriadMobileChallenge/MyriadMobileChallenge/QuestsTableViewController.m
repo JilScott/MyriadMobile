@@ -26,10 +26,7 @@
 {
     [super viewDidLoad];
     
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *alignment = [defaults objectForKey:@"alignment"];
-    
+ 
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
     [self downloadQuests];
@@ -58,10 +55,6 @@
                 [arrayFilteredQuests addObject:quest];
             }
         }
-        else if (alignment)
-        {
-            _alignmentQ = alignment.intValue;
-        }
         else
         {
             _alignmentQ = 1;
@@ -73,53 +66,54 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    if (_name)
-    {
-        self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Your Quests, %@", _name];
-    }
-    else
-    {
-        self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Welcome"];
-    }
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                   [UIColor blackColor], NSForegroundColorAttributeName,
+                                                                   [UIFont fontWithName:@"Papyrus" size:21.0], NSFontAttributeName,nil];
+    self.navigationController.navigationBar.topItem.title = @"Quests";
     [self.tableView reloadData];
-    //filtering complete array of quests based on alignment (0=good, 1=neutral, 2=evil)
-    /*
-     arrayFilteredQuests = [[NSMutableArray alloc] init];
-     
-     for (Quest *quest in arrayQuests)
-     {
-     if (_alignmentQ == 0)
-     {
-     if (quest.alignment == 0)
-     {
-     [arrayFilteredQuests addObject:quest];
-     }
-     }
-     else  if (_alignmentQ == 1)
-     {
-     arrayFilteredQuests = arrayQuests;
-     break;
-     }
-     else  if (_alignmentQ == 2)
-     {
-     if (quest.alignment == 2)
-     {
-     [arrayFilteredQuests addObject:quest];
-     }
-     }
-     else
-     {
-     arrayFilteredQuests = arrayQuests;
-     }
-     }
-     
-     */
+  //font only changes after going to different view controller and returning
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+
+-(void)filterQuests
+{
+    arrayFilteredQuests = [[NSMutableArray alloc]init];
+    if (_alignmentQ == 1)
+    {
+        arrayFilteredQuests = arrayQuests;
+    }
+    else
+    {
+        for (Quest *quest in arrayQuests)
+        {
+            if (_alignmentQ == 0)
+            {
+                if (quest.alignment == 0)
+                {
+                    [arrayFilteredQuests addObject:quest];
+                }
+            }
+            else  if (_alignmentQ == 2)
+            {
+                if (quest.alignment == 2)
+                {
+                    [arrayFilteredQuests addObject:quest];
+                }
+            }
+            else
+            {
+                arrayFilteredQuests = arrayQuests;
+            }
+        }
+    }
+    [self.tableView reloadData];
+
+}
+
 -(void)delegatePassAlignment:(int)alignment andName:(NSString *)name
 {
     _name = name;
@@ -127,35 +121,8 @@
     self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Your Quests, %@", _name];
     _alignmentQ = alignment;
     //0 = good, 1 = neutral, 2 = evil
-    arrayFilteredQuests = [[NSMutableArray alloc]init];
-    
-    for (Quest *quest in arrayQuests)
-    {
-        if (_alignmentQ == 0)
-        {
-            if (quest.alignment == 0)
-            {
-                [arrayFilteredQuests addObject:quest];
-            }
-        }
-        else  if (_alignmentQ == 1)
-        {
-            arrayFilteredQuests = arrayQuests;
-            break;
-        }
-        else  if (_alignmentQ == 2)
-        {
-            if (quest.alignment == 2)
-            {
-                [arrayFilteredQuests addObject:quest];
-            }
-        }
-        else
-        {
-            arrayFilteredQuests = arrayQuests;
-        }
-    }
-    [self.tableView reloadData];
+
+    [self filterQuests];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSString stringWithFormat:@"%d", _alignmentQ] forKey:@"alignment"];
@@ -248,6 +215,7 @@
              NSLog(@"Error: %@ %@", error, [error userInfo]);
          }
          [arrayQuests addObjectsFromArray:downloadedQuests];
+         [self filterQuests];
      }];
 }
 @end

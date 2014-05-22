@@ -23,16 +23,11 @@
 {
     [super viewDidLoad];
     
-    //_alignmentOutlet.selectedSegmentIndex = 1;
+    user = [PFUser currentUser];
     
+    _txtFldName.text = user[@"name"];
+    _alignmentOutlet.selectedSegmentIndex = [user[@"alignment"]intValue];
     
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *alignment = [defaults objectForKey:@"alignment"];
-    //_alignment = alignment.intValue;
-    _alignmentOutlet.selectedSegmentIndex = alignment.intValue;
-    NSString *name = [defaults objectForKey:@"name"];
-    _txtFldName.text = name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,20 +55,27 @@
     {
         _alignment = 0;
         NSLog(@"chose good");
+        _alignmentOutlet.backgroundColor = [UIColor redColor];
+
     }
     else if (_alignmentOutlet.selectedSegmentIndex == 1)
     {
         _alignment = 1;
         NSLog(@"chose neutral");
+        _alignmentOutlet.backgroundColor = [UIColor blueColor];
+
     }
     else if (_alignmentOutlet.selectedSegmentIndex == 2)
     {
         _alignment = 2;
         NSLog(@"chose evil");
+        _alignmentOutlet.backgroundColor = [UIColor blackColor];
+
     }
     else
     {
         _alignment = 3;
+        NSLog(@"Error selecting alignment in Settings");
     }
     
 }
@@ -84,32 +86,8 @@
 
 - (IBAction)pressedSave:(id)sender
 {
-    if (_alignmentOutlet.selectedSegmentIndex == 0)
-    {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"0" forKey:@"alignment"];
-        [defaults synchronize];
-        NSLog(@"saved good");
-        
-    }
-    else if (_alignmentOutlet.selectedSegmentIndex == 1)
-    {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"1" forKey:@"alignment"];
-        [defaults synchronize];
-        NSLog(@"saved neutral");
-    }
-    else if (_alignmentOutlet.selectedSegmentIndex == 2)
-    {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"2" forKey:@"alignment"];
-        [defaults synchronize];
-        NSLog(@"saved evil");
-    }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSString stringWithFormat: @"%@",_txtFldName.text] forKey:@"name"];
-    [defaults synchronize];
-    [_delegate delegatePassAlignment:_alignment andName:_txtFldName.text];
+
+    [_delegate delegatePassAlignment:_alignmentOutlet.selectedSegmentIndex andName:_txtFldName.text];
     
     user = [PFUser currentUser];
     user[@"name"] =_txtFldName.text;

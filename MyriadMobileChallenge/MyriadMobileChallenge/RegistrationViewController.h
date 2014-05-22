@@ -18,6 +18,8 @@
 - (IBAction)pressedCancel:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *alignmentSegment;
 @property (weak, nonatomic) IBOutlet UILabel *labelRegistrationAlerts;
+- (IBAction)pressedAlignment:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *alignmentView;
 
 
 

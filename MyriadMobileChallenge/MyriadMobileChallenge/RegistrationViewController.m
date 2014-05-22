@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -32,34 +32,49 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)pressedAnywhereDismissKeyboard:(id)sender
 {
-    [text resignFirstResponder];
+    [_txtFldUsername resignFirstResponder];
+    [_txtFldPassword resignFirstResponder];
+    [_txtFldHeroName resignFirstResponder];
+
+    NSLog(@"dismiss button clickable");
 }
 
 - (IBAction)pressedSignUp:(id)sender
 {
+    UIAlertView * alert;
     if ([_txtFldUsername.text isEqualToString:@""])
     {
-        _labelRegistrationAlerts.text = @"Must Complete All Fields";
+        alert =[[UIAlertView alloc ] initWithTitle:@"Required Fields Incomplete"
+                                           message:@"Must Enter A Username"
+                                          delegate:self
+                                 cancelButtonTitle:@"Ok"
+                                 otherButtonTitles: nil];
+        [alert show];
+        
+        _labelRegistrationAlerts.text = @"Must Enter a Username";
     }
     else if ([_txtFldPassword.text isEqualToString:@""])
     {
+        alert =[[UIAlertView alloc ] initWithTitle:@"Required Fields Incomplete"
+                                           message:@"Must Enter A Password"
+                                          delegate:self
+                                 cancelButtonTitle:@"Ok"
+                                 otherButtonTitles: nil];
+        [alert show];
         _labelRegistrationAlerts.text = @"Must Complete All Fields";
     }
     else if ([_txtFldHeroName.text isEqualToString:@""])
     {
+        alert =[[UIAlertView alloc ] initWithTitle:@"Required Fields Incomplete"
+                                           message:@"Must Enter A Hero Name"
+                                          delegate:self
+                                 cancelButtonTitle:@"Ok"
+                                 otherButtonTitles: nil];
+        [alert show];
         _labelRegistrationAlerts.text = @"Must Complete All Fields";
     }
     else
@@ -73,17 +88,22 @@
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
-                 [self performSegueWithIdentifier:@"registered" sender:self];
+                [self performSegueWithIdentifier:@"registered" sender:self];
             }
             else
             {
                 NSString *errorString = [error userInfo][@"error"];
                 NSLog(@"%@", errorString);
-                _labelRegistrationAlerts.text = [NSString stringWithFormat:@"Error: %@", errorString];
+                UIAlertView  *errorAlert = [[UIAlertView alloc] initWithTitle:@"error"
+                                                                      message:[NSString stringWithFormat:@"%@", errorString]
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"Ok"
+                                                            otherButtonTitles:nil];
+                [errorAlert show];
                 // Show the errorString and let the user try again.
             }
         }];
-       
+        
     }
 }
 
@@ -95,11 +115,32 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"registered"])
-         {
-             UINavigationController *navigationController = [segue destinationViewController];
-             QuestsTableViewController *qvc = (QuestsTableViewController*)navigationController.topViewController;
-             qvc.alignmentQ = _alignmentSegment.selectedSegmentIndex;
-             qvc.name = _txtFldHeroName.text;
+    {
+        UINavigationController *navigationController = [segue destinationViewController];
+        QuestsTableViewController *qvc = (QuestsTableViewController*)navigationController.topViewController;
+        qvc.alignmentQ = _alignmentSegment.selectedSegmentIndex;
+        qvc.name = _txtFldHeroName.text;
+    }
+}
+- (IBAction)pressedAlignment:(id)sender
+{
+    if (_alignmentSegment.selectedSegmentIndex == 1)
+    {
+        _alignmentView.image = [UIImage imageNamed:@"neutral.jpg"];
+        _alignmentSegment.backgroundColor = [UIColor blueColor];
+    }
+    else if (_alignmentSegment.selectedSegmentIndex == 0)
+    {
+        _alignmentView.image = [UIImage imageNamed:@"unicornKill.jpg"];
+        _alignmentSegment.backgroundColor = [UIColor redColor];
+
+    }
+    else if (_alignmentSegment.selectedSegmentIndex == 2)
+    {
+        _alignmentView.image = [UIImage imageNamed:@"evilDragon.jpg"];
+        _alignmentSegment.backgroundColor = [UIColor blackColor];
+
+     
     }
 }
 @end
