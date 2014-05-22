@@ -7,6 +7,7 @@
 //
 
 #import "Quest.h"
+#import <Parse/Parse.h>
 
 @implementation Quest
 
@@ -47,6 +48,46 @@
     questObject.questLatitude = 46.892386;
     questObject.questLongitude = -96.799669;
     [arrayQuests addObject:questObject];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Quests"];
+    [query includeKey:@"questGiver"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *onlineQuests, NSError *error)
+    {
+        if (!error)
+        {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu quests.", (unsigned long)onlineQuests.count);
+            // Do something with the found objects
+            for (PFObject *quest in onlineQuests)
+            {
+                Quest *downloadedQuest = [[Quest alloc] init];
+                downloadedQuest.questTitle = quest[@"name"];
+                downloadedQuest.alignment = [quest[@"alignment"]intValue];
+                downloadedQuest.description = quest.description;
+                
+                PFGeoPoint *questGeoPoint = quest[@"location"];
+                downloadedQuest.questLatitude = questGeoPoint.latitude;
+                downloadedQuest.questLongitude = questGeoPoint.longitude;
+                
+                PFUser *giver = quest[@"questGiver"];
+                downloadedQuest.giver= giver[@"name"];
+                
+                PFGeoPoint *giverGeoPoint = quest[@"location"];
+                downloadedQuest.giverLatitude = giverGeoPoint.latitude;
+                downloadedQuest.giverLongitude = giverGeoPoint.longitude;
+                
+                [arrayQuests addObject:downloadedQuest];
+                
+                NSLog(@"%@", quest.objectId);
+            }
+        }
+        else
+        {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     
     return arrayQuests;
 }

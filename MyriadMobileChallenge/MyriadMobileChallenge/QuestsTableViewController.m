@@ -81,7 +81,7 @@
     {
         self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Welcome"];
     }
-    
+    [self.tableView reloadData];
     //filtering complete array of quests based on alignment (0=good, 1=neutral, 2=evil)
     /*
      arrayFilteredQuests = [[NSMutableArray alloc] init];
