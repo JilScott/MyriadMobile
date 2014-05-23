@@ -109,7 +109,6 @@
                         <outlet property="txtFldHeroName" destination="oj7-gP-y93" id="YyP-QF-Q1T"/>
                         <outlet property="txtFldPassword" destination="haH-XN-vzD" id="OhE-0L-TkT"/>
                         <outlet property="txtFldUsername" destination="dZf-Mv-b3P" id="XoD-MX-RDx"/>
-                        <segue destination="8Bl-Kb-x3C" kind="modal" identifier="registered" id="0Cm-xc-J61"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvc-0Z-v9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,7 +211,7 @@
                                     <segue destination="NJe-bk-pfa" kind="modal" identifier="register" id="z0l-gD-psO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xs-FX-y1E">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xs-FX-y1E">
                                 <rect key="frame" x="76" y="439" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Use Facebook to Log In!">
@@ -254,12 +253,25 @@
                                 <rect key="frame" x="-10" y="0.0" width="333" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI7-nc-Xmm">
+                                <rect key="frame" x="0.0" y="0.0" width="323" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissKeyboard:" destination="qAM-ie-ZyR" eventType="touchUpInside" id="oTq-gz-uBW"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="by2-n0-vMS">
                                 <rect key="frame" x="112" y="211" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.68000000000000005" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qAM-ie-ZyR" id="hyC-VG-mXC"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nY4-1t-jkO">
                                 <rect key="frame" x="83" y="36" width="155" height="34"/>
@@ -514,7 +526,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="7vJ-R9-2bk"/>
-    </inferredMetricsTieBreakers>
 </document>

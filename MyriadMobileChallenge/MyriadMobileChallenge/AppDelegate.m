@@ -20,8 +20,8 @@
     [PFFacebookUtils initializeFacebook];
   
    // [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    [PFTwitterUtils initializeWithConsumerKey:@"98GAqzVt1lpTuFHilWsf6KEBB"
-                              consumerSecret:@"EQVYQovhaQZ9LOgPKBhWiwsXAzsrdd3TQEjE986JtQP0mkIzyw"];
+   // [PFTwitterUtils initializeWithConsumerKey:@"98GAqzVt1lpTuFHilWsf6KEBB"
+                           //   consumerSecret:@"EQVYQovhaQZ9LOgPKBhWiwsXAzsrdd3TQEjE986JtQP0mkIzyw"];
    
     return YES;
 }

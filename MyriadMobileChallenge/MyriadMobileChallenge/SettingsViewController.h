@@ -13,6 +13,7 @@
 @end
 @interface SettingsViewController : UIViewController
 
+- (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)alignmentSegmented:(id)sender;
 - (IBAction)pressedSave:(id)sender;
 - (IBAction)pressedUpdateLocation:(id)sender;

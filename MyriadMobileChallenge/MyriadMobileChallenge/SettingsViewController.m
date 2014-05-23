@@ -16,6 +16,7 @@
 @implementation SettingsViewController
 {
     PFUser *user;
+    UITextField *text;
 }
 
 - (void)viewDidLoad
@@ -28,9 +29,26 @@
     _alignmentOutlet.selectedSegmentIndex = [user[@"alignment"]intValue];
 }
 
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    text = textField;
+}
+
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [text resignFirstResponder];
+}
+
 - (IBAction)alignmentSegmented:(id)sender
 {
-    NSLog(@"%d msg", _alignmentOutlet.selectedSegmentIndex);
+    NSLog(@"%ld msg", (long)_alignmentOutlet.selectedSegmentIndex);
     if (_alignmentOutlet.selectedSegmentIndex == 0)
     {
         _alignment = 0;
@@ -57,8 +75,8 @@
         _alignment = 3;
         NSLog(@"Error selecting alignment in Settings");
     }
-    
 }
+
 - (IBAction)pressedBackOnSettings:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];

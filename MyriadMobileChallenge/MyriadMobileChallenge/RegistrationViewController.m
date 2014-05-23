@@ -88,7 +88,7 @@
                 _txtFldUsername.text = @"";
                 _txtFldPassword.text = @"";
                 _txtFldHeroName.text = @"";
-                [self performSegueWithIdentifier:@"registered" sender:self];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             else
             {

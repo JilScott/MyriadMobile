@@ -86,41 +86,46 @@
              else
              {
                  NSLog(@"%@ %@", user, error);
-                 _labelBegin.backgroundColor = [UIColor redColor];
-                 _labelBegin.text = [NSString stringWithFormat:@"%@ %@", user, error]; //change to UIAlert
+                 UIAlertView  *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                                       message:[NSString stringWithFormat:@"%@ %@", user, error]
+                                                                      delegate:self
+                                                             cancelButtonTitle:@"Ok"
+                                                             otherButtonTitles:nil];
+                 [errorAlert show];
              }
          }];
     }
 }
-
+/*
 - (IBAction)facebookButton:(id)sender //finish or remove
 {
+    
     [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error)
     {
         if (!user)
         {
+            UIAlertView  *errorAlert = [[UIAlertView alloc] initWithTitle:@"Facebook Registration Error"
+                                                                  message:[NSString stringWithFormat:@"Error logging in with facebook:%@. Try Again or Sign Up", error]
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Ok"
+                                                        otherButtonTitles:nil];
+            [errorAlert show];
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         }
         else if (user.isNew)
         {
+            user[@"alignment"] = [NSNumber numberWithInteger:1];
+            [user saveInBackground];
+            [self performSegueWithIdentifier:@"loggedIn" sender:self];
+//currently unassigned hero name if user logs in with facebook
             NSLog(@"User signed up and logged in through Facebook!");
-        } else
+        }
+        else
         {
             NSLog(@"User logged in through Facebook!");
             [self performSegueWithIdentifier:@"loggedIn" sender:self];
         }
     }];
 }
-/*
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"loggedIn"])
-    {
-        UINavigationController *navigationController = [segue destinationViewController];
-        QuestsTableViewController *qvc = (QuestsTableViewController*)navigationController.topViewController;
-        qvc.alignmentQ = 1;
-        qvc.name = _txtFldUsername.text;
-    }
-}
- */
+*/
 @end
