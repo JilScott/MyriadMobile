@@ -37,7 +37,6 @@
     questObject.questLongitude = -96.7363173;
     [arrayQuests addObject:questObject];
     
-    
     questObject = [[Quest alloc] init];
     questObject.questTitle = @"Filthy Mongrel";
     questObject.alignment = 2; //Evil
@@ -51,7 +50,5 @@
     
     return arrayQuests;
 }
-
-
 
 @end

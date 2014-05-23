@@ -19,11 +19,9 @@
     UITextField *text;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -31,8 +29,6 @@
     [textField resignFirstResponder];
     return YES;
 }
-
-
 
 - (IBAction)pressedAnywhereDismissKeyboard:(id)sender
 {
@@ -88,13 +84,17 @@
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
+                _labelRegistrationAlerts.text = @"";
+                _txtFldUsername.text = @"";
+                _txtFldPassword.text = @"";
+                _txtFldHeroName.text = @"";
                 [self performSegueWithIdentifier:@"registered" sender:self];
             }
             else
             {
                 NSString *errorString = [error userInfo][@"error"];
                 NSLog(@"%@", errorString);
-                UIAlertView  *errorAlert = [[UIAlertView alloc] initWithTitle:@"error"
+                UIAlertView  *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!"
                                                                       message:[NSString stringWithFormat:@"%@", errorString]
                                                                      delegate:self
                                                             cancelButtonTitle:@"Ok"
@@ -103,7 +103,6 @@
                 // Show the errorString and let the user try again.
             }
         }];
-        
     }
 }
 
@@ -119,7 +118,7 @@
         UINavigationController *navigationController = [segue destinationViewController];
         QuestsTableViewController *qvc = (QuestsTableViewController*)navigationController.topViewController;
         qvc.alignmentQ = _alignmentSegment.selectedSegmentIndex;
-        qvc.name = _txtFldHeroName.text;
+        //qvc.name = _txtFldHeroName.text;
     }
 }
 - (IBAction)pressedAlignment:(id)sender
@@ -133,14 +132,11 @@
     {
         _alignmentView.image = [UIImage imageNamed:@"unicornKill.jpg"];
         _alignmentSegment.backgroundColor = [UIColor redColor];
-
     }
     else if (_alignmentSegment.selectedSegmentIndex == 2)
     {
         _alignmentView.image = [UIImage imageNamed:@"evilDragon.jpg"];
         _alignmentSegment.backgroundColor = [UIColor blackColor];
-
-     
     }
 }
 @end

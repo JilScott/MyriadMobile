@@ -75,40 +75,28 @@
     giverAnnotation.subtitle = @"Quest Poster";
     giverAnnotation.type = @"Poster";
     [self.mapView addAnnotation:giverAnnotation];
-    
-  
-    
-    /*
-     MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = .20f;
-    span.longitudeDelta = .20f;
-    region.center = center;
-    region.span =span;
-     Old methodology to set region
-    */
-   //[_mapView setRegion:region animated:YES];
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"Papyrus" size:28.0], NSFontAttributeName,nil];
+    self.navigationController.navigationBar.topItem.title = @"Details";
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    
     JSAnnotationView *view = (JSAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     if (view == nil)
     {
         view =  [[JSAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     }
-    
     return view;
 }
 
-
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    
     QuestsAnnotation *myAnnotation = (QuestsAnnotation *)view.annotation;
-    
+
     Class mapItemClass = [MKMapItem class];
     if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
     {
@@ -142,12 +130,9 @@
     }
 }
 
-
-
-- (IBAction)pressedAcceptQuest:(id)sender
+- (IBAction)pressedAcceptQuest:(id)sender //implement or remove
 {
     [_acceptQuestLabel setTitle:@"Accepted Quest" forState:UIControlStateNormal];
     [_acceptQuestLabel setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-   
 }
 @end

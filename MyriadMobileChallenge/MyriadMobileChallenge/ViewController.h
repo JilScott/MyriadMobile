@@ -14,20 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtFldPasword;
-- (IBAction)pressedLogIn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *labelBegin;
 @property (weak, nonatomic) IBOutlet UIButton *buttonLogIn;
-- (IBAction)dismissKeyboard:(id)sender;
-- (IBAction)pressedSwitch:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UISwitch *switcher;
-- (IBAction)pressedRegister:(id)sender;
-
-
-
-
-
-
-
+- (IBAction)facebookButton:(id)sender;
+- (IBAction)pressedLogIn:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end

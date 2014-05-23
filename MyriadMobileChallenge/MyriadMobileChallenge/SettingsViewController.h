@@ -13,14 +13,15 @@
 @end
 @interface SettingsViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *txtFldName;
 - (IBAction)alignmentSegmented:(id)sender;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *alignmentOutlet;
-@property (nonatomic) int alignment;
-@property (strong, nonatomic) id <AlignmentDelegate> delegate;
-- (IBAction)pressedBackOnSettings:(id)sender;
-@property (strong, nonatomic) NSString *name;
 - (IBAction)pressedSave:(id)sender;
 - (IBAction)pressedUpdateLocation:(id)sender;
+- (IBAction)pressedBackOnSettings:(id)sender;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) id <AlignmentDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *alignmentOutlet;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UITextField *txtFldName;
+@property (nonatomic) int alignment;
 
 @end

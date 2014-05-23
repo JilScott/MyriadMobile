@@ -14,19 +14,12 @@
 
 @interface DetailViewController : UIViewController <MKMapViewDelegate>
 
+- (IBAction)pressedAcceptQuest:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *acceptQuestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelPoster;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) Quest *selectedQuest;
-
-- (IBAction)pressedAcceptQuest:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *acceptQuestLabel;
-
-
-
-
-
-
 
 @end

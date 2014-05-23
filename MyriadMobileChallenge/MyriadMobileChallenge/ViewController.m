@@ -23,16 +23,8 @@
 {
     [super viewDidLoad];
     
-    
-    //default for Remember Username set to OFF
-    // _switcher.on = NO;
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *usernameObject = [defaults objectForKey:@"logIn"];
-    _txtFldUsername.text = usernameObject;
-    
-    
-    
+    _txtFldUsername.text = [defaults objectForKey:@"logIn"];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -49,15 +41,25 @@
     return YES;
 }
 
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [text resignFirstResponder];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    text = textField;
+}
+
 - (IBAction)pressedLogIn:(id)sender
 {
-    if (_switcher.on == YES)
+    if (_switcher.on == YES)//save username
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:_txtFldUsername.text forKey:@"logIn"];
         [defaults synchronize];
     }
-    else
+    else //dont save username
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:@"" forKey:@"logIn"];
@@ -68,7 +70,6 @@
     {
         _labelBegin.text = @"Incorrect Username Or Password";
         _labelBegin.backgroundColor = [UIColor redColor];
-        
     }
     else
     {
@@ -77,37 +78,40 @@
          {
              if (user)
              {
+                 _txtFldPasword.text =@"";
+                 _labelBegin.text = @"Begin Your Quests!";
+                 _labelBegin.backgroundColor = [UIColor whiteColor];
                  [self performSegueWithIdentifier:@"loggedIn" sender:self];
              }
              else
              {
                  NSLog(@"%@ %@", user, error);
                  _labelBegin.backgroundColor = [UIColor redColor];
-                 _labelBegin.text = [NSString stringWithFormat:@"%@ %@", user, error];
+                 _labelBegin.text = [NSString stringWithFormat:@"%@ %@", user, error]; //change to UIAlert
              }
          }];
     }
 }
 
-- (IBAction)dismissKeyboard:(id)sender
+- (IBAction)facebookButton:(id)sender //finish or remove
 {
-    [text resignFirstResponder];
+    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error)
+    {
+        if (!user)
+        {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        }
+        else if (user.isNew)
+        {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else
+        {
+            NSLog(@"User logged in through Facebook!");
+            [self performSegueWithIdentifier:@"loggedIn" sender:self];
+        }
+    }];
 }
-
-- (IBAction)pressedSwitch:(id)sender {
-}
-
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    text = textField;
-}
-
-- (IBAction)pressedRegister:(id)sender
-{
-    //[self performSegueWithIdentifier:@"register" sender:self];
-}
-
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"loggedIn"])
@@ -117,6 +121,6 @@
         qvc.alignmentQ = 1;
         qvc.name = _txtFldUsername.text;
     }
-    
 }
+ */
 @end

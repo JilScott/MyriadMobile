@@ -13,8 +13,8 @@
 
 @interface QuestsTableViewController : UITableViewController <AlignmentDelegate>
 
+- (IBAction)pressedLogOut:(id)sender;
 @property (nonatomic) int alignmentQ;
 @property (strong, nonatomic) NSString *name;
-- (IBAction)pressedLogOut:(id)sender;
 
 @end

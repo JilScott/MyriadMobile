@@ -12,9 +12,9 @@
 @interface Quest : NSObject
 
 @property (strong, nonatomic) NSString *questTitle;
-@property (nonatomic) int alignment;
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSString *giver;
+@property (nonatomic) int alignment;
 @property (nonatomic) float giverLatitude;
 @property (nonatomic) float giverLongitude;
 @property (nonatomic) float questLatitude;

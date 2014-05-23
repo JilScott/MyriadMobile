@@ -21,12 +21,10 @@
     PFUser *currentUser;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
- 
     arrayQuests = [Quest presetQuests];
     arrayFilteredQuests = [[NSMutableArray alloc] init];
     [self downloadQuests];
@@ -67,11 +65,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                   [UIColor blackColor], NSForegroundColorAttributeName,
-                                                                   [UIFont fontWithName:@"Papyrus" size:21.0], NSFontAttributeName,nil];
+                                                                   [UIFont fontWithName:@"Papyrus" size:28.0], NSFontAttributeName,nil];
     self.navigationController.navigationBar.topItem.title = @"Quests";
     [self.tableView reloadData];
-  //font only changes after going to different view controller and returning
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -116,25 +112,16 @@
 
 -(void)delegatePassAlignment:(int)alignment andName:(NSString *)name
 {
-    _name = name;
-    NSLog(@"%d %@", _alignmentQ, _name);
-    self.navigationController.navigationBar.topItem.title = [NSString stringWithFormat:@"Your Quests, %@", _name];
+    NSLog(@"%d", _alignmentQ);
     _alignmentQ = alignment;
     //0 = good, 1 = neutral, 2 = evil
-
     [self filterQuests];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSString stringWithFormat:@"%d", _alignmentQ] forKey:@"alignment"];
-    [defaults setObject:_name forKey:@"name"];
-    [defaults synchronize];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [arrayFilteredQuests count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -143,7 +130,8 @@
     {
         cell = [[QuestCustomTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
-    
+    cell.accessoryView = [[ UIImageView alloc ]
+                          initWithImage:[UIImage imageNamed:@"sword.png" ]];
     cell.labelQuestTitle.text = [NSString stringWithFormat:@"%@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).questTitle];
     cell.labelQuestPoster.text = [NSString stringWithFormat:@"Posted by: %@", ((Quest *)[arrayFilteredQuests objectAtIndex:indexPath.row]).giver];
     return cell;
@@ -184,7 +172,6 @@
          {
              // The find succeeded.
              NSLog(@"Successfully retrieved %lu quests.", (unsigned long)onlineQuests.count);
-             // Do something with the found objects
              for (PFObject *quest in onlineQuests)
              {
                  Quest *downloadedQuest = [[Quest alloc] init];
@@ -202,7 +189,6 @@
                  PFGeoPoint *giverGeoPoint = giver[@"location"];
                  downloadedQuest.giverLatitude = giverGeoPoint.latitude;
                  downloadedQuest.giverLongitude = giverGeoPoint.longitude;
-                 
                  
                  [downloadedQuests addObject:downloadedQuest];
                  
